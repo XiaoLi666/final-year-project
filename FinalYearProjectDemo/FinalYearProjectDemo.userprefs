@@ -1,0 +1,24 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\assets\script\game\action\ActionMoveLeft.cs">
+    <Files>
+      <File FileName="Assets\assets\script\player\Player.cs" Line="21" Column="38" />
+      <File FileName="Assets\assets\script\game\action\ActionMoveLeft.cs" Line="14" Column="3" />
+      <File FileName="Assets\assets\script\player\PlayerMotion.cs" Line="25" Column="3" />
+      <File FileName="Assets\assets\script\game\action\ActionBase.cs" Line="23" Column="4" />
+      <File FileName="Assets\assets\script\game\trigger\TriggerFactory.cs" Line="47" Column="18" />
+      <File FileName="Assets\assets\script\game\trigger\TriggerBase.cs" Line="15" Column="3" />
+      <File FileName="Assets\assets\script\game\trigger\TriggerGameEnd.cs" Line="1" Column="1" />
+      <File FileName="Assets\assets\script\game\action\ActionJump.cs" Line="14" Column="3" NotebookId="1" />
+      <File FileName="Assets\assets\script\game\action\ActionMoveForward.cs" Line="7" Column="3" NotebookId="1" />
+      <File FileName="Assets\assets\script\game\trigger\TriggerGameStart.cs" Line="12" Column="2" NotebookId="1" />
+      <File FileName="Assets\assets\script\game\pathNode\PathNode.cs" Line="19" Column="54" NotebookId="1" />
+      <File FileName="Assets\assets\script\game\action\ActionCollisionDetection.cs" Line="5" Column="54" NotebookId="1" />
+      <File FileName="Assets\assets\script\game\action\ActionFactory.cs" Line="19" Column="38" NotebookId="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{8DEFADA2-A9F0-D3A7-6561-F2939D25E87E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_3_5;UNITY_5_3;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_LOG_MIXED_STACKTRACE;ENABLE_UNITYWEBREQUEST;ENABLE_EVENT_QUEUE;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\assets\script\game\GameWorld.cs" />
+     <Compile Include="Assets\assets\script\game\action\ActionBase.cs" />
+     <Compile Include="Assets\assets\script\game\action\ActionCollisionDetection.cs" />
+     <Compile Include="Assets\assets\script\game\action\ActionFactory.cs" />
+     <Compile Include="Assets\assets\script\game\action\ActionJump.cs" />
+     <Compile Include="Assets\assets\script\game\action\ActionMoveForward.cs" />
+     <Compile Include="Assets\assets\script\game\action\ActionMoveLeft.cs" />
+     <Compile Include="Assets\assets\script\game\pathNode\PathNode.cs" />
+     <Compile Include="Assets\assets\script\game\pathNode\PathNodeGenerator.cs" />
+     <Compile Include="Assets\assets\script\game\pathNode\PathNodeManager.cs" />
+     <Compile Include="Assets\assets\script\game\trigger\TriggerBase.cs" />
+     <Compile Include="Assets\assets\script\game\trigger\TriggerEatSeaweed.cs" />
+     <Compile Include="Assets\assets\script\game\trigger\TriggerFactory.cs" />
+     <Compile Include="Assets\assets\script\game\trigger\TriggerGameEnd.cs" />
+     <Compile Include="Assets\assets\script\game\trigger\TriggerGameStart.cs" />
+     <Compile Include="Assets\assets\script\game\trigger\TriggerMoveDown.cs" />
+     <Compile Include="Assets\assets\script\game\trigger\TriggerMoveForward.cs" />
+     <Compile Include="Assets\assets\script\game\trigger\TriggerMoveLeft.cs" />
+     <Compile Include="Assets\assets\script\game\trigger\TriggerMoveRight.cs" />
+     <Compile Include="Assets\assets\script\game\trigger\TriggerMoveUp.cs" />
+     <Compile Include="Assets\assets\script\game\trigger\TriggerRotateLeft.cs" />
+     <Compile Include="Assets\assets\script\game\trigger\TriggerRotateRight.cs" />
+     <Compile Include="Assets\assets\script\game\trigger\TriggerSpeedup.cs" />
+     <Compile Include="Assets\assets\script\leap_motion\GameDictionary.cs" />
+     <Compile Include="Assets\assets\script\leap_motion\GestureTracker.cs" />
+     <Compile Include="Assets\assets\script\leap_motion\HandStateTracker.cs" />
+     <Compile Include="Assets\assets\script\player\Player.cs" />
+     <Compile Include="Assets\assets\script\player\PlayerControl.cs" />
+     <Compile Include="Assets\assets\script\player\PlayerMotion.cs" />
+     <Compile Include="Assets\assets\script\scriptable_objects\GameMap.cs" />
+     <Compile Include="Assets\assets\sensor\LeapC\Arm.cs" />
+     <Compile Include="Assets\assets\sensor\LeapC\Bone.cs" />
+     <Compile Include="Assets\assets\sensor\LeapC\CSharpExtensions.cs" />
+     <Compile Include="Assets\assets\sensor\LeapC\CircularObjectBuffer.cs" />
+     <Compile Include="Assets\assets\sensor\LeapC\ClockCorrelator.cs" />
+     <Compile Include="Assets\assets\sensor\LeapC\Config.cs" />
+     <Compile Include="Assets\assets\sensor\LeapC\Connection.cs" />
+     <Compile Include="Assets\assets\sensor\LeapC\Controller.cs" />
+     <Compile Include="Assets\assets\sensor\LeapC\Device.cs" />
+     <Compile Include="Assets\assets\sensor\LeapC\DeviceList.cs" />
+     <Compile Include="Assets\assets\sensor\LeapC\DistortionData.cs" />
+     <Compile Include="Assets\assets\sensor\LeapC\DistortionDictionary.cs" />
+     <Compile Include="Assets\assets\sensor\LeapC\Events.cs" />
+     <Compile Include="Assets\assets\sensor\LeapC\FailedDevice.cs" />
+     <Compile Include="Assets\assets\sensor\LeapC\FailedDeviceList.cs" />
+     <Compile Include="Assets\assets\sensor\LeapC\Finger.cs" />
+     <Compile Include="Assets\assets\sensor\LeapC\Frame.cs" />
+     <Compile Include="Assets\assets\sensor\LeapC\Hand.cs" />
+     <Compile Include="Assets\assets\sensor\LeapC\IController.cs" />
+     <Compile Include="Assets\assets\sensor\LeapC\Image.cs" />
+     <Compile Include="Assets\assets\sensor\LeapC\ImageData.cs" />
+     <Compile Include="Assets\assets\sensor\LeapC\ImageFuture.cs" />
+     <Compile Include="Assets\assets\sensor\LeapC\InteractionBox.cs" />
+     <Compile Include="Assets\assets\sensor\LeapC\LeapC.cs" />
+     <Compile Include="Assets\assets\sensor\LeapC\Logger.cs" />
+     <Compile Include="Assets\assets\sensor\LeapC\Matrix.cs" />
+     <Compile Include="Assets\assets\sensor\LeapC\MessageSeverity.cs" />
+     <Compile Include="Assets\assets\sensor\LeapC\ObjectPool.cs" />
+     <Compile Include="Assets\assets\sensor\LeapC\PendingImages.cs" />
+     <Compile Include="Assets\assets\sensor\LeapC\PooledObject.cs" />
+     <Compile Include="Assets\assets\sensor\LeapC\ServiceFrameFactory.cs" />
+     <Compile Include="Assets\assets\sensor\LeapC\StructMarshal.cs" />
+     <Compile Include="Assets\assets\sensor\LeapC\TimeBracket.cs" />
+     <Compile Include="Assets\assets\sensor\LeapC\TrackedQuad.cs" />
+     <Compile Include="Assets\assets\sensor\LeapC\Vector.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\HandFactory.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\HandPool.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\HandProxy.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\HandRepresentation.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\Hands\CapsuleHand.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\Hands\DebugFinger.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\Hands\DebugHand.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\Hands\FingerModel.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\Hands\HandDrop.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\Hands\HandEnableDisable.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\Hands\HandFader.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\Hands\HandModel.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\Hands\HandTransitionBehavior.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\Hands\IHandModel.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\Hands\MinimalHand.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\Hands\RiggedFinger.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\Hands\RiggedHand.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\Hands\RigidFinger.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\Hands\RigidHand.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\Hands\SkeletalFinger.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\Hands\SkeletalHand.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\Hands\TestHandFactory.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\LeapDeviceInfo.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\LeapHandController.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\LeapImageRetriever.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\LeapProvider.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\LeapServiceProvider.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\Utils\DisconnectionNotice.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\Utils\EnableDepthBuffer.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\Utils\ExecutionOrder.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\Utils\FitHeightToScreen.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\Utils\FrameRateControls.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\Utils\KeyEnableBehaviors.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\Utils\KeyEnableGameObjects.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\Utils\LeapUnityExtensions.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\Utils\SmoothedFloat.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\Utils\SmoothedQuaternion.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\Utils\SmoothedVector3.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\Utils\StretchToScreen.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\Utils\Utils.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\VR\EyeType.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\VR\LeapVRCameraControl.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\VR\LeapVRTemporalWarping.cs" />
+     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\VR\TemporalWarpingStatus.cs" />
+     <None Include="Assets\assets\sensor\Plugins\donotdelete.txt" />
+     <None Include="Assets\assets\sensor\LeapMotion\Resources\LeapCG.cginc" />
+     <None Include="Assets\assets\sensor\LeapMotion\README_BEFORE_UPDATING.txt" />
+     <None Include="Assets\assets\sensor\LeapMotion\readme.txt" />
+     <None Include="Assets\assets\sensor\LeapMotion\Dependencies.txt" />
+     <None Include="Assets\assets\sensor\LeapMotion\Resources\ThresholdOverlay.shader" />
+     <None Include="Assets\assets\sensor\LeapMotion\Resources\PassthroughForeground.shader" />
+     <None Include="Assets\assets\sensor\LeapMotion\Resources\PassthroughBackground.shader" />
+     <None Include="Assets\assets\sensor\LeapMotion\Version.txt" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
