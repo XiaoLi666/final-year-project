@@ -55,6 +55,7 @@
      <Compile Include="Assets\assets\script\game\pathNode\PathNode.cs" />
      <Compile Include="Assets\assets\script\game\pathNode\PathNodeGenerator.cs" />
      <Compile Include="Assets\assets\script\game\pathNode\PathNodeManager.cs" />
+     <Compile Include="Assets\assets\script\game\trigger\GestureTrigger.cs" />
      <Compile Include="Assets\assets\script\game\trigger\TriggerBase.cs" />
      <Compile Include="Assets\assets\script\game\trigger\TriggerEatSeaweed.cs" />
      <Compile Include="Assets\assets\script\game\trigger\TriggerFactory.cs" />
@@ -162,6 +163,7 @@
      <None Include="Assets\assets\sensor\LeapMotion\Resources\ThresholdOverlay.shader" />
      <None Include="Assets\assets\sensor\LeapMotion\Resources\PassthroughForeground.shader" />
      <None Include="Assets\assets\sensor\LeapMotion\Resources\PassthroughBackground.shader" />
+     <None Include="Assets\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
      <None Include="Assets\assets\sensor\LeapMotion\Version.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
@@ -169,6 +171,10 @@
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{E62CCC41-2AB4-99E3-649A-B80B11B0DA98}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

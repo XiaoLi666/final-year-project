@@ -1,22 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace GameLogic {
 	public class PathNode : MonoBehaviour {
-		public TriggerBase.TRIGGER_TYPE m_triggerType = TriggerBase.TRIGGER_TYPE.TRIGGER_none;
-		public TriggerBase m_trigger = null;
-		public bool m_isTouched;
-
-		private GameObject m_player = null;
-
-		// private m_preConnector;
-		// private m_postConnector;
+		public GestureTrigger.GESTURE_TRIGGER_TYPE m_gestureTriggerType;
+		// TODO: general trigger, not use it right now
+		// public List<TriggerBase.TRIGGER_TYPE> m_triggerTypes = new List<TriggerBase.TRIGGER_TYPE>();
+		// public List<TriggerBase> m_triggers = new List<TriggerBase>();
+		public GameObject m_player;
+		public Vector3 m_direction;
 
 		void Awake() {
-			Player player_script = GameObject.Find ("Player").GetComponent<Player> ();
-			m_player = player_script.m_player;
-
-			m_trigger = TriggerFactory.CreateTrigger (m_triggerType, m_player);
 		}
 
 		// Use this for initialization
@@ -25,9 +20,7 @@ namespace GameLogic {
 		
 		// Update is called once per frame
 		void Update () {
-			if (!m_isTouched) {
-				return;
-			}
+			return;
 		}
 	}
 }

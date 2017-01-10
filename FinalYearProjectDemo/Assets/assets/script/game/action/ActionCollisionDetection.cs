@@ -3,14 +3,23 @@ using System.Collections;
 
 namespace GameLogic {
 	public class ActionCollisionDetection : ActionBase {
-		public override void Init() {}
+		public ActionCollisionDetection() {
+		}
 
-		public override void Start() {}
+		public override void Init() {
+			
+		}
+
+		public override void Start() {
+			
+		}
 
 		public override bool Update() {
 			return false;
 		}
 
-		public override void End() {}
+		public override void End() {
+			
+		}
 	}
 }

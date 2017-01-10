@@ -5,6 +5,7 @@ using System.Collections.Generic;
 namespace GameLogic {
 	public class PathNodeGenerator : MonoBehaviour {
 		// Public
+		public GameObject m_player;
 		public GameObject[] m_pathNodes;
 		public PathNodeGenerator.PATHNODE_TYPE[] m_pathNodeTypes;
 		public GameMap m_map;
@@ -12,6 +13,8 @@ namespace GameLogic {
 		public Vector3 m_defaultDirection;
 		public float m_generateDistance;
 		public bool m_useDefaultPath = false;
+
+		// TODO: going to rename some of the path node types
 		public enum PATHNODE_TYPE {
 			PATHNODE_end,
 			PATHNODE_MoveDown,
@@ -50,7 +53,7 @@ namespace GameLogic {
 		}
 
 		// Path generate function
-		private PathNodeGenerator.PATHNODE_TYPE[] Generate() {
+		private List<PathNodeGenerator.PATHNODE_TYPE> Generate() {
 			if (m_useDefaultPath) {
 				return m_map.m_pathNodeTypes;
 			}
@@ -71,12 +74,11 @@ namespace GameLogic {
 			
 		// Function to create the map
 		public void Create() {
-			PATHNODE_TYPE[] path_node_list = Generate ();
+			List<PathNodeGenerator.PATHNODE_TYPE> path_node_list = Generate ();
 			GameObject prefab_to_refer = null;
-			Vector3 cur_location = m_startLocation;
-			Vector3 new_location = cur_location;
-			Vector3 current_direction = m_defaultDirection;
 			float rotation_angle = 0.0F;
+			Vector3 cur_location = m_startLocation;
+			Vector3 current_direction = m_defaultDirection;
 			Vector3 rotation_vector = new Vector3 (0.0F, rotation_angle, 0.0F);
 
 			foreach (PATHNODE_TYPE node_type in path_node_list) {
@@ -84,8 +86,7 @@ namespace GameLogic {
 				current_direction = Quaternion.Euler(0.0F, rotation_angle, 0.0F) * m_defaultDirection;
 
 				// Calculate the location for the path node to generate
-				new_location = cur_location + m_generateDistance * current_direction;
-				cur_location = new_location;
+				cur_location += m_generateDistance * current_direction;
 
 				// Instantiate a new path node
 				prefab_to_refer = m_pathNodeDict[node_type];
@@ -97,6 +98,10 @@ namespace GameLogic {
 
 				// Get rotation angle for next path node
 				GetRotationAngle (ref rotation_angle, node_type);
+
+				// Pass attributes to PathNode object
+				prefab_to_refer.GetComponent<PathNode>().m_player = m_player;
+				prefab_to_refer.GetComponent<PathNode>().m_direction = current_direction;
 			}
 		}
 	}

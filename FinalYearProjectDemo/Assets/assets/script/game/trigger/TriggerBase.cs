@@ -2,6 +2,7 @@
 using System.Collections;
 
 namespace GameLogic {
+	// TODO: going to rename this class to GenericTrigger
 	public class TriggerBase {
 		private GameObject m_user;
 		public GameObject User {
@@ -28,7 +29,8 @@ namespace GameLogic {
 			TRIGGER_gameStart,
 			TRIGGER_gameEnd,
 			TRIGGER_speedup,
-			TRIGGER_eatSeaweed
+			TRIGGER_eatSeaweed,
+			TRIGGER_jump
 		};
 
 		TRIGGER_TYPE m_type = TRIGGER_TYPE.TRIGGER_none;

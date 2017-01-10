@@ -3,6 +3,21 @@ using System.Collections;
 
 namespace GameLogic {
 	public class ActionFactory {
+		static public ActionBase CreateActionMoveForward(GameObject owner, ActionBase.ACTION_CONDITION action_condition, float move_speed) {
+			ActionMoveForward new_action = new ActionMoveForward (action_condition, owner, move_speed);
+			return new_action;
+		}
+
+		static public ActionBase CreateActionCollisionDetection(GameObject owner, ActionBase.ACTION_CONDITION action_condition) {
+			ActionCollisionDetection new_action = new ActionCollisionDetection ();
+			return null;
+		}
+
+		// static public ActionBase CreateActionCollisionDetection(GameObject owner, ActionBase.ACTION_CONDITION) {
+		// }
+			
+		/*
+		// TODO: going to remove this function
 		static public ActionBase CreateAction(ActionBase.ACTION_TYPE action_type, ActionBase.ACTION_CONDITION action_condition, GameObject player) {
 			ActionBase new_action = null;
 			switch (action_type) {
@@ -29,5 +44,6 @@ namespace GameLogic {
 
 			return new_action;
 		}
+		*/
 	}
 }
