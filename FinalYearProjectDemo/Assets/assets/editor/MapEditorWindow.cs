@@ -9,12 +9,12 @@ public class MapEditorWindow : EditorWindow {
 	SerializedObject m_gameMapObj = null;
 	const int TOP_PADDING = 2;
 
-	static Vector2 m_windowMaxSize = Vector2.one * 300.0f;
-	static Vector2 m_windowMinSize = m_windowMaxSize;
-	static Rect m_listRect = new Rect (Vector2.zero, m_windowMinSize);
+	static Vector2 m_windowMaxSize = Vector2.one * 700.0f;
+	static Vector2 m_windowMinSize = Vector2.one * 700.0f;
 
-	Vector2 m_scrollPos;
-	string t = "Th";
+	Vector2 m_scrollPos = Vector2.zero;
+
+	// TODO: going to define a lot of things here:
 
 	public static void ShowWindow(GameMap game_map) {
 		EditorWindow window = EditorWindow.GetWindow (typeof(MapEditorWindow), true, "Map Editor");
@@ -33,7 +33,7 @@ public class MapEditorWindow : EditorWindow {
 				true, true, true, true
 			);
 
-			m_nodeList.drawHeaderCallback = (rect) => EditorGUI.LabelField (rect, "To Name");
+			m_nodeList.drawHeaderCallback = (rect) => EditorGUI.LabelField (rect, "Drag and drop to reorder the list");
 			m_nodeList.drawElementCallback = (Rect rect, int index, bool is_active, bool is_focused) => {
 				rect.y += TOP_PADDING;
 				rect.height = EditorGUIUtility.singleLineHeight;
@@ -47,25 +47,14 @@ public class MapEditorWindow : EditorWindow {
 	}
 
 	void OnGUI() {
-		/*if (m_gameMapObj != null) {
-			EditorGUILayout.BeginScrollView (Vector2.zero);
-			m_gameMapObj.Update ();
-			m_nodeList.DoList (m_listRect);
-			m_gameMapObj.ApplyModifiedProperties ();
-			EditorGUILayout.EndScrollView ();
-		} else {
-			// TODO: EditorGUI.HelpBox ();
-		}*/
-
-		EditorGUILayout.BeginVertical ();
-		m_scrollPos = EditorGUILayout.BeginScrollView (m_scrollPos, GUILayout.Width(200), GUILayout.Height(200));
-		GUILayout.Label (t);
-		if (m_gameMapObj != null) {
-			m_gameMapObj.Update ();
-			m_nodeList.DoList (m_listRect);
-			m_gameMapObj.ApplyModifiedProperties ();
+		if (m_nodeList != null) {
+			m_scrollPos = GUI.BeginScrollView (new Rect (0, 0, 700, 700), m_scrollPos, new Rect (0, 0, 700, m_nodeList.count * m_nodeList.elementHeight + m_nodeList.footerHeight + m_nodeList.headerHeight));
+			if (m_gameMapObj != null) {
+				m_gameMapObj.Update ();
+				m_nodeList.DoLayoutList ();
+				m_gameMapObj.ApplyModifiedProperties ();
+			}
+			GUI.EndScrollView ();
 		}
-		EditorGUILayout.EndScrollView ();
-		EditorGUILayout.EndVertical ();
 	}
 }
