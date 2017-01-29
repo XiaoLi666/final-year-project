@@ -1,12 +1,8 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\assets\editor\MapEditorWindow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\assets\script\game\PathNodeGenerator.cs">
     <Files>
-      <File FileName="Assets\assets\editor\MapEditor.cs" Line="24" Column="2" />
-      <File FileName="Assets\assets\script\scriptable_objects\GameMap.cs" Line="1" Column="1" />
-      <File FileName="Assets\assets\script\game\pathNode\PathNode.cs" Line="1" Column="1" />
-      <File FileName="Assets\assets\script\game\pathNode\PathNodeGenerator.cs" Line="1" Column="1" />
-      <File FileName="Assets\assets\editor\MapEditorWindow.cs" Line="52" Column="31" />
+      <File FileName="Assets\assets\script\game\PathNodeGenerator.cs" Line="29" Column="21" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -53,10 +53,13 @@
      <None Include="Assets\assets\sensor\LeapMotion\Resources\LeapCG.cginc" />
      <None Include="Assets\assets\sensor\LeapMotion\README_BEFORE_UPDATING.txt" />
      <None Include="Assets\assets\sensor\LeapMotion\readme.txt" />
+     <None Include="Assets\UnitySampleUI\Fonts\Jupiter\LICENSE.txt" />
      <None Include="Assets\assets\sensor\LeapMotion\Dependencies.txt" />
+     <None Include="Assets\UnitySampleUI\Textures and Sprites\SF UI\Background\LICENSE.txt" />
      <None Include="Assets\assets\sensor\LeapMotion\Resources\ThresholdOverlay.shader" />
      <None Include="Assets\assets\sensor\LeapMotion\Resources\PassthroughForeground.shader" />
      <None Include="Assets\assets\sensor\LeapMotion\Resources\PassthroughBackground.shader" />
+     <None Include="Assets\UnitySampleUI\Materials\UI-Default-No-Alpha.shader" />
      <None Include="Assets\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
      <None Include="Assets\assets\sensor\LeapMotion\Version.txt" />
  <Reference Include="UnityEngine.UI">

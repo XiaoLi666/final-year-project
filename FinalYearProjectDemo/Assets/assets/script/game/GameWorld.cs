@@ -3,27 +3,36 @@ using System.Collections;
 
 namespace GameLogic {
 	public class GameWorld : MonoBehaviour {
+#region attributes
 		[SerializeField]
 		private GameObject m_player;
+		[SerializeField]
+		private GameObject m_playerModel; // TODO: must fix this
+		private Player component = null;
+#endregion
 
-		// Use this for initialization
+#region methods
+		// TODO: going to create a timer to count the game time used!
 		void Start () {
-			// TODO: by default should only add collision detection action to player
-			// then, when the player collide with the start pathnode, then add the move forward action
-
-
-
-			/*ActionBase action_move_forward = ActionFactory.CreateActionMoveForward(
-				m_player, 
-				ActionBase.ACTION_CONDITION.ACTION_permanent, 
-				m_player.GetComponent<Player> ().MoveSpeed
-			);
-			m_player.GetComponent<Player> ().AddAction (action_move_forward);*/
+			component = m_player.GetComponent<Player> ();
+			ActionBase action_raycasting = ActionFactory.CreateActionRaycasting (m_player);
+			component.AddAction (action_raycasting);
 		}
-		
-		// Update is called once per frame
+
 		void Update () {
-		
 		}
+
+		static public void StartGame() {
+			ResumeGame ();
+		}
+
+		static public void PauseGame() {
+			Time.timeScale = 0;
+		}
+
+		static public void ResumeGame() {
+			Time.timeScale = 1;
+		}
+#endregion
 	}
 }
