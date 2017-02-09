@@ -56,7 +56,7 @@ namespace GameLogic {
 		}
 
 		private void HandleRaycastPathNodeSeaweed () {
-			Transform child_to_delete = m_hit.transform.FindChild("Obstacle");
+			Transform child_to_delete = m_hit.transform.Find("Seaweed");
 			if (child_to_delete != null) {
 				iTween.Pause ();
 				// TODO: going to track some gesture here

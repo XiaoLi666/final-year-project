@@ -92,6 +92,14 @@
     <Compile Include="Assets\UnitySampleUI\Scripts\ScrollDetailTexture.cs" />
     <Compile Include="Assets\UnitySampleUI\Scripts\ShowSliderValue.cs" />
     <Compile Include="Assets\UnitySampleUI\Scripts\TiltWindow.cs" />
+    <Compile Include="Assets\assets\material\Water\Sources\Scripts\Water.cs" />
+    <Compile Include="Assets\assets\material\Water\Water4\Sources\Scripts\Displace.cs" />
+    <Compile Include="Assets\assets\material\Water\Water4\Sources\Scripts\GerstnerDisplace.cs" />
+    <Compile Include="Assets\assets\material\Water\Water4\Sources\Scripts\MeshContainer.cs" />
+    <Compile Include="Assets\assets\material\Water\Water4\Sources\Scripts\PlanarReflection.cs" />
+    <Compile Include="Assets\assets\material\Water\Water4\Sources\Scripts\SpecularLighting.cs" />
+    <Compile Include="Assets\assets\material\Water\Water4\Sources\Scripts\WaterBase.cs" />
+    <Compile Include="Assets\assets\material\Water\Water4\Sources\Scripts\WaterTile.cs" />
     <Compile Include="Assets\assets\script\game\ActionBase.cs" />
     <Compile Include="Assets\assets\script\game\ActionEatSeaweed.cs" />
     <Compile Include="Assets\assets\script\game\ActionFactory.cs" />
@@ -103,6 +111,7 @@
     <Compile Include="Assets\assets\script\game\GameWorld.cs" />
     <Compile Include="Assets\assets\script\game\PathNode.cs" />
     <Compile Include="Assets\assets\script\game\PathNodeGenerator.cs" />
+    <Compile Include="Assets\assets\script\game\PathNodeGeneratorInfo.cs" />
     <Compile Include="Assets\assets\script\game\Player.cs" />
     <Compile Include="Assets\assets\script\leap_motion\GameDictionary.cs" />
     <Compile Include="Assets\assets\script\leap_motion\GestureTracker.cs" />
@@ -240,6 +249,10 @@
     <None Include="Assets\UnitySampleUI\Fonts\Jupiter\LICENSE.txt" />
     <None Include="Assets\UnitySampleUI\Materials\UI-Default-No-Alpha.shader" />
     <None Include="Assets\UnitySampleUI\Textures and Sprites\SF UI\Background\LICENSE.txt" />
+    <None Include="Assets\assets\material\Water\Sources\Shaders\FX-Water.shader" />
+    <None Include="Assets\assets\material\Water\Water4\Sources\Shaders\FX-SimpleWater4.shader" />
+    <None Include="Assets\assets\material\Water\Water4\Sources\Shaders\FX-Water4.shader" />
+    <None Include="Assets\assets\material\Water\Water4\Sources\Shaders\WaterInclude.cginc" />
     <None Include="Assets\assets\sensor\LeapMotion\Dependencies.txt" />
     <None Include="Assets\assets\sensor\LeapMotion\README_BEFORE_UPDATING.txt" />
     <None Include="Assets\assets\sensor\LeapMotion\Resources\LeapCG.cginc" />

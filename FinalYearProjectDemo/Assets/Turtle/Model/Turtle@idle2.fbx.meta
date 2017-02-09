@@ -1,0 +1,281 @@
+fileFormatVersion: 2
+guid: c0591b008dff0444481a721d63108f30
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: base_jnt
+    100002: front_belly_jnt
+    100004: front_fin_l_jnt_1
+    100006: front_fin_l_jnt_2
+    100008: front_fin_l_jnt_3
+    100010: front_fin_l_jnt_4
+    100012: front_fin_l_jnt_5
+    100014: front_fin_l_jnt_6
+    100016: front_fin_l_jnt_7
+    100018: front_fin_l_jnt_8
+    100020: front_fin_r_jnt_1
+    100022: front_fin_r_jnt_2
+    100024: front_fin_r_jnt_3
+    100026: front_fin_r_jnt_4
+    100028: front_fin_r_jnt_5
+    100030: front_fin_r_jnt_6
+    100032: front_fin_r_jnt_7
+    100034: front_fin_r_jnt_8
+    100036: head_jnt
+    100038: jaw_jnt
+    100040: neck_jnt_1
+    100042: neck_jnt_2
+    100044: neck_jnt_3
+    100046: neck_jnt_4
+    100048: neck_jnt_5
+    100050: neck_jnt_6
+    100052: rear_bely_jnt
+    100054: rear_fin_l_jnt_1
+    100056: rear_fin_l_jnt_2
+    100058: rear_fin_l_jnt_3
+    100060: rear_fin_l_jnt_4
+    100062: rear_fin_l_jnt_5
+    100064: rear_fin_l_jnt_6
+    100066: rear_fin_l_jnt_7
+    100068: rear_fin_r_jnt_1
+    100070: rear_fin_r_jnt_2
+    100072: rear_fin_r_jnt_3
+    100074: rear_fin_r_jnt_4
+    100076: rear_fin_r_jnt_5
+    100078: rear_fin_r_jnt_6
+    100080: rear_fin_r_jnt_7
+    100082: tail_jnt_1
+    100084: tail_jnt_2
+    100086: tail_jnt_3
+    100088: tail_jnt_4
+    100090: tail_jnt_5
+    100092: turtle
+    100094: //RootNode
+    400000: base_jnt
+    400002: front_belly_jnt
+    400004: front_fin_l_jnt_1
+    400006: front_fin_l_jnt_2
+    400008: front_fin_l_jnt_3
+    400010: front_fin_l_jnt_4
+    400012: front_fin_l_jnt_5
+    400014: front_fin_l_jnt_6
+    400016: front_fin_l_jnt_7
+    400018: front_fin_l_jnt_8
+    400020: front_fin_r_jnt_1
+    400022: front_fin_r_jnt_2
+    400024: front_fin_r_jnt_3
+    400026: front_fin_r_jnt_4
+    400028: front_fin_r_jnt_5
+    400030: front_fin_r_jnt_6
+    400032: front_fin_r_jnt_7
+    400034: front_fin_r_jnt_8
+    400036: head_jnt
+    400038: jaw_jnt
+    400040: neck_jnt_1
+    400042: neck_jnt_2
+    400044: neck_jnt_3
+    400046: neck_jnt_4
+    400048: neck_jnt_5
+    400050: neck_jnt_6
+    400052: rear_bely_jnt
+    400054: rear_fin_l_jnt_1
+    400056: rear_fin_l_jnt_2
+    400058: rear_fin_l_jnt_3
+    400060: rear_fin_l_jnt_4
+    400062: rear_fin_l_jnt_5
+    400064: rear_fin_l_jnt_6
+    400066: rear_fin_l_jnt_7
+    400068: rear_fin_r_jnt_1
+    400070: rear_fin_r_jnt_2
+    400072: rear_fin_r_jnt_3
+    400074: rear_fin_r_jnt_4
+    400076: rear_fin_r_jnt_5
+    400078: rear_fin_r_jnt_6
+    400080: rear_fin_r_jnt_7
+    400082: tail_jnt_1
+    400084: tail_jnt_2
+    400086: tail_jnt_3
+    400088: tail_jnt_4
+    400090: tail_jnt_5
+    400092: turtle
+    400094: //RootNode
+    4300000: turtle
+    7400000: idle2
+    9500000: //RootNode
+    13700000: turtle
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: idle2
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: base_jnt
+        weight: 1
+      - path: base_jnt/front_belly_jnt
+        weight: 1
+      - path: base_jnt/front_fin_l_jnt_1
+        weight: 1
+      - path: base_jnt/front_fin_l_jnt_1/front_fin_l_jnt_2
+        weight: 1
+      - path: base_jnt/front_fin_l_jnt_1/front_fin_l_jnt_2/front_fin_l_jnt_3
+        weight: 1
+      - path: base_jnt/front_fin_l_jnt_1/front_fin_l_jnt_2/front_fin_l_jnt_3/front_fin_l_jnt_4
+        weight: 1
+      - path: base_jnt/front_fin_l_jnt_1/front_fin_l_jnt_2/front_fin_l_jnt_3/front_fin_l_jnt_4/front_fin_l_jnt_5
+        weight: 1
+      - path: base_jnt/front_fin_l_jnt_1/front_fin_l_jnt_2/front_fin_l_jnt_3/front_fin_l_jnt_4/front_fin_l_jnt_5/front_fin_l_jnt_6
+        weight: 1
+      - path: base_jnt/front_fin_l_jnt_1/front_fin_l_jnt_2/front_fin_l_jnt_3/front_fin_l_jnt_4/front_fin_l_jnt_5/front_fin_l_jnt_6/front_fin_l_jnt_7
+        weight: 1
+      - path: base_jnt/front_fin_l_jnt_1/front_fin_l_jnt_2/front_fin_l_jnt_3/front_fin_l_jnt_4/front_fin_l_jnt_5/front_fin_l_jnt_6/front_fin_l_jnt_7/front_fin_l_jnt_8
+        weight: 1
+      - path: base_jnt/front_fin_r_jnt_1
+        weight: 1
+      - path: base_jnt/front_fin_r_jnt_1/front_fin_r_jnt_2
+        weight: 1
+      - path: base_jnt/front_fin_r_jnt_1/front_fin_r_jnt_2/front_fin_r_jnt_3
+        weight: 1
+      - path: base_jnt/front_fin_r_jnt_1/front_fin_r_jnt_2/front_fin_r_jnt_3/front_fin_r_jnt_4
+        weight: 1
+      - path: base_jnt/front_fin_r_jnt_1/front_fin_r_jnt_2/front_fin_r_jnt_3/front_fin_r_jnt_4/front_fin_r_jnt_5
+        weight: 1
+      - path: base_jnt/front_fin_r_jnt_1/front_fin_r_jnt_2/front_fin_r_jnt_3/front_fin_r_jnt_4/front_fin_r_jnt_5/front_fin_r_jnt_6
+        weight: 1
+      - path: base_jnt/front_fin_r_jnt_1/front_fin_r_jnt_2/front_fin_r_jnt_3/front_fin_r_jnt_4/front_fin_r_jnt_5/front_fin_r_jnt_6/front_fin_r_jnt_7
+        weight: 1
+      - path: base_jnt/front_fin_r_jnt_1/front_fin_r_jnt_2/front_fin_r_jnt_3/front_fin_r_jnt_4/front_fin_r_jnt_5/front_fin_r_jnt_6/front_fin_r_jnt_7/front_fin_r_jnt_8
+        weight: 1
+      - path: base_jnt/neck_jnt_1
+        weight: 1
+      - path: base_jnt/neck_jnt_1/neck_jnt_2
+        weight: 1
+      - path: base_jnt/neck_jnt_1/neck_jnt_2/neck_jnt_3
+        weight: 1
+      - path: base_jnt/neck_jnt_1/neck_jnt_2/neck_jnt_3/neck_jnt_4
+        weight: 1
+      - path: base_jnt/neck_jnt_1/neck_jnt_2/neck_jnt_3/neck_jnt_4/neck_jnt_5
+        weight: 1
+      - path: base_jnt/neck_jnt_1/neck_jnt_2/neck_jnt_3/neck_jnt_4/neck_jnt_5/neck_jnt_6
+        weight: 1
+      - path: base_jnt/neck_jnt_1/neck_jnt_2/neck_jnt_3/neck_jnt_4/neck_jnt_5/neck_jnt_6/head_jnt
+        weight: 1
+      - path: base_jnt/neck_jnt_1/neck_jnt_2/neck_jnt_3/neck_jnt_4/neck_jnt_5/neck_jnt_6/head_jnt/jaw_jnt
+        weight: 1
+      - path: base_jnt/rear_bely_jnt
+        weight: 1
+      - path: base_jnt/rear_fin_l_jnt_1
+        weight: 1
+      - path: base_jnt/rear_fin_l_jnt_1/rear_fin_l_jnt_2
+        weight: 1
+      - path: base_jnt/rear_fin_l_jnt_1/rear_fin_l_jnt_2/rear_fin_l_jnt_3
+        weight: 1
+      - path: base_jnt/rear_fin_l_jnt_1/rear_fin_l_jnt_2/rear_fin_l_jnt_3/rear_fin_l_jnt_4
+        weight: 1
+      - path: base_jnt/rear_fin_l_jnt_1/rear_fin_l_jnt_2/rear_fin_l_jnt_3/rear_fin_l_jnt_4/rear_fin_l_jnt_5
+        weight: 1
+      - path: base_jnt/rear_fin_l_jnt_1/rear_fin_l_jnt_2/rear_fin_l_jnt_3/rear_fin_l_jnt_4/rear_fin_l_jnt_5/rear_fin_l_jnt_6
+        weight: 1
+      - path: base_jnt/rear_fin_l_jnt_1/rear_fin_l_jnt_2/rear_fin_l_jnt_3/rear_fin_l_jnt_4/rear_fin_l_jnt_5/rear_fin_l_jnt_6/rear_fin_l_jnt_7
+        weight: 1
+      - path: base_jnt/rear_fin_r_jnt_1
+        weight: 1
+      - path: base_jnt/rear_fin_r_jnt_1/rear_fin_r_jnt_2
+        weight: 1
+      - path: base_jnt/rear_fin_r_jnt_1/rear_fin_r_jnt_2/rear_fin_r_jnt_3
+        weight: 1
+      - path: base_jnt/rear_fin_r_jnt_1/rear_fin_r_jnt_2/rear_fin_r_jnt_3/rear_fin_r_jnt_4
+        weight: 1
+      - path: base_jnt/rear_fin_r_jnt_1/rear_fin_r_jnt_2/rear_fin_r_jnt_3/rear_fin_r_jnt_4/rear_fin_r_jnt_5
+        weight: 1
+      - path: base_jnt/rear_fin_r_jnt_1/rear_fin_r_jnt_2/rear_fin_r_jnt_3/rear_fin_r_jnt_4/rear_fin_r_jnt_5/rear_fin_r_jnt_6
+        weight: 1
+      - path: base_jnt/rear_fin_r_jnt_1/rear_fin_r_jnt_2/rear_fin_r_jnt_3/rear_fin_r_jnt_4/rear_fin_r_jnt_5/rear_fin_r_jnt_6/rear_fin_r_jnt_7
+        weight: 1
+      - path: base_jnt/tail_jnt_1
+        weight: 1
+      - path: base_jnt/tail_jnt_1/tail_jnt_2
+        weight: 1
+      - path: base_jnt/tail_jnt_1/tail_jnt_2/tail_jnt_3
+        weight: 1
+      - path: base_jnt/tail_jnt_1/tail_jnt_2/tail_jnt_3/tail_jnt_4
+        weight: 1
+      - path: base_jnt/tail_jnt_1/tail_jnt_2/tail_jnt_3/tail_jnt_4/tail_jnt_5
+        weight: 1
+      - path: turtle
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

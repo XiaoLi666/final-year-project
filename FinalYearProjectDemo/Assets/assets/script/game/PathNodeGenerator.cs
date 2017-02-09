@@ -83,7 +83,7 @@ namespace GameLogic {
 				// Render path gizmo
 				RenderPathGizmo ();
 				// TODO: going to find a proper place for this line of code
-				iTween.MoveTo (m_player, iTween.Hash ("path", m_waypointsTransformList, "speed", 5, "orienttopath", false, "looktime", .1, "easetype", "easeInOutSine", "islocal", false));
+				iTween.MoveTo (m_player, iTween.Hash ("path", m_waypointsTransformList, "speed", 2.0f, "easetype", "linear"));
 			}
 		}
 
