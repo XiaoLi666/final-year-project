@@ -19,6 +19,8 @@ namespace GameLogic {
 					m_actions.Remove (m_actions[i]);
 				}
 			}
+
+			// TODO: going to update the player controller here
 		}
 #endregion
 

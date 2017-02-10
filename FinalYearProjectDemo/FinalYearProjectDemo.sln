@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinalYearProjectDemo.Plugin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinalYearProjectDemo", "FinalYearProjectDemo.csproj", "{DE51D5B4-740A-B880-BBC4-4316A97AFE88}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinalYearProjectDemo.Editor.Plugins", "FinalYearProjectDemo.Editor.Plugins.csproj", "{3A3B4CB0-84AD-600D-2FBC-0F54CE3BAF43}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinalYearProjectDemo.Editor", "FinalYearProjectDemo.Editor.csproj", "{CDA83B79-3B42-F2AB-FC6A-C4FE881379D8}"
 EndProject
 Global
@@ -21,6 +23,10 @@ Global
 		{DE51D5B4-740A-B880-BBC4-4316A97AFE88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE51D5B4-740A-B880-BBC4-4316A97AFE88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE51D5B4-740A-B880-BBC4-4316A97AFE88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A3B4CB0-84AD-600D-2FBC-0F54CE3BAF43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A3B4CB0-84AD-600D-2FBC-0F54CE3BAF43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A3B4CB0-84AD-600D-2FBC-0F54CE3BAF43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A3B4CB0-84AD-600D-2FBC-0F54CE3BAF43}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CDA83B79-3B42-F2AB-FC6A-C4FE881379D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CDA83B79-3B42-F2AB-FC6A-C4FE881379D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDA83B79-3B42-F2AB-FC6A-C4FE881379D8}.Release|Any CPU.ActiveCfg = Release|Any CPU

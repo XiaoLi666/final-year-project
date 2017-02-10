@@ -11,7 +11,7 @@ namespace GameLogic {
 		};
 		private float m_angle = 0.0f;
 		private float m_angleCounter = 0.0f;
-		private const float m_rotateSpeed = 50.0f;
+		private const float m_rotateSpeed = 90.0f;
 		private ROTATE_DIRECTION m_direction = ROTATE_DIRECTION.ROTATE_none;
 #endregion
 
