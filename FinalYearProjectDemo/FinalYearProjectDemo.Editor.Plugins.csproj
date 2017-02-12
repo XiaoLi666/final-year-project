@@ -224,6 +224,10 @@
     <None Include="Assets\UnitySampleUI\Fonts\Jupiter\LICENSE.txt" />
     <None Include="Assets\UnitySampleUI\Materials\UI-Default-No-Alpha.shader" />
     <None Include="Assets\UnitySampleUI\Textures and Sprites\SF UI\Background\LICENSE.txt" />
+    <None Include="Assets\assets\material\Water\Sources\Shaders\FX-Water.shader" />
+    <None Include="Assets\assets\material\Water\Water4\Sources\Shaders\FX-SimpleWater4.shader" />
+    <None Include="Assets\assets\material\Water\Water4\Sources\Shaders\FX-Water4.shader" />
+    <None Include="Assets\assets\material\Water\Water4\Sources\Shaders\WaterInclude.cginc" />
     <None Include="Assets\assets\sensor\LeapMotion\Dependencies.txt" />
     <None Include="Assets\assets\sensor\LeapMotion\README_BEFORE_UPDATING.txt" />
     <None Include="Assets\assets\sensor\LeapMotion\Resources\LeapCG.cginc" />
