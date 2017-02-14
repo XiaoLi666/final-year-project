@@ -5,10 +5,17 @@ using System.Collections.Generic;
 namespace GameLogic {
 	public class Player : MonoBehaviour {
 #region attributes
-		public GestureTracker gestureTracker;
 		[SerializeField][Range(0.0f,0.2f)]
 		private float m_moveSpeed;
+		[SerializeField]
+		private GestureTracker m_gestureTracker;
 		private List<ActionBase> m_actions = new List<ActionBase>();
+
+		public GestureTracker Gesture {
+			get {
+				return m_gestureTracker;
+			}
+		}
 #endregion
 
 #region override methods
@@ -19,8 +26,6 @@ namespace GameLogic {
 					m_actions.Remove (m_actions[i]);
 				}
 			}
-
-			// TODO: going to update the player controller here
 		}
 #endregion
 

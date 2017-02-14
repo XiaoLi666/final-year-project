@@ -103,16 +103,15 @@
     <Compile Include="Assets\assets\script\game\ActionBase.cs" />
     <Compile Include="Assets\assets\script\game\ActionEatSeaweed.cs" />
     <Compile Include="Assets\assets\script\game\ActionFactory.cs" />
-    <Compile Include="Assets\assets\script\game\ActionPlayerAbovePathNodeDetection.cs" />
     <Compile Include="Assets\assets\script\game\ActionRaycasting.cs" />
     <Compile Include="Assets\assets\script\game\ActionRotate.cs" />
     <Compile Include="Assets\assets\script\game\AnimatedProjector.cs" />
     <Compile Include="Assets\assets\script\game\DrawWayPoint.cs" />
     <Compile Include="Assets\assets\script\game\GameMap.cs" />
     <Compile Include="Assets\assets\script\game\GameWorld.cs" />
+    <Compile Include="Assets\assets\script\game\GestureAnalyser.cs" />
     <Compile Include="Assets\assets\script\game\PathNode.cs" />
     <Compile Include="Assets\assets\script\game\PathNodeGenerator.cs" />
-    <Compile Include="Assets\assets\script\game\PathNodeGeneratorInfo.cs" />
     <Compile Include="Assets\assets\script\game\Player.cs" />
     <Compile Include="Assets\assets\script\game\PlayerController.cs" />
     <Compile Include="Assets\assets\script\leap_motion\GameDictionary.cs" />
