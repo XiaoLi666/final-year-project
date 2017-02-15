@@ -9,16 +9,21 @@ namespace GameLogic {
 		private float m_moveSpeed;
 		[SerializeField]
 		private GestureTracker m_gestureTracker;
+		private Animator m_turtleAnimator;
+        private AnimationAnalyser m_animationAnalyser = null;
+        private GestureAnalyser m_gestureAnalyser = null;
 		private List<ActionBase> m_actions = new List<ActionBase>();
-
-		public GestureTracker Gesture {
-			get {
-				return m_gestureTracker;
-			}
-		}
+        public GestureAnalyser GestureAnalyser { get { return m_gestureAnalyser; } }
+        public AnimationAnalyser AnimationAnalyser { get { return m_animationAnalyser; } }
 #endregion
 
 #region override methods
+		private void Awake() {
+			m_turtleAnimator = this.transform.FindChild("Turtle").GetComponent<Animator>();
+            m_gestureAnalyser = new GestureAnalyser(m_gestureTracker);
+            m_animationAnalyser = new AnimationAnalyser(m_turtleAnimator);
+		}
+
 		void FixedUpdate() {
 			for (int i = 0; i < m_actions.Count; ++ i) {
 				bool completed = m_actions[i].Update ();

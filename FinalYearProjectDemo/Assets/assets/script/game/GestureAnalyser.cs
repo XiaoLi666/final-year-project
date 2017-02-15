@@ -26,13 +26,13 @@ namespace GameLogic {
         }
 
         // Calling per tick
-        public void Analysis(string tag, RaycastHit hit) {
+        public void Analysis(string tag) {
             if (tag != "null") {
                 m_cachedTag = tag;
             }
 
             CharacterAction char_action = GameDictionary.PairedAction[m_gestureTracker.GetIdentifiedGesture()];
-            if (char_action == m_tagActionDict[m_cachedTag]) {
+            if (m_tagActionDict.ContainsKey(m_cachedTag) && char_action == m_tagActionDict[m_cachedTag]) {
                 // Did the correct action!
                 if (char_action != CharacterAction.Idle)
                     Debug.Log("You just have done a correct action!" + char_action.ToString());

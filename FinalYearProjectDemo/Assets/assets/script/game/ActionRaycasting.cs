@@ -10,18 +10,20 @@ namespace GameLogic {
 		private RaycastHit m_hit;
 		private Player m_component = null;
 		private GestureAnalyser m_gestureAnalyser = null;
+        private AnimationAnalyser m_animationAnalyser = null;
 #endregion
 
 #region override methods
-		public override bool Update() {
+        public override bool Update() {
 			m_ray.origin = m_owner.transform.position;
 			if (Physics.Raycast(m_ray, out m_hit, m_maxDistance)) {
 				if (m_curInstanceId == m_hit.transform.gameObject.GetInstanceID()) {
-					m_gestureAnalyser.Analysis("null", m_hit);
+					m_gestureAnalyser.Analysis("null");
 					return true;
 				}
 
-				m_gestureAnalyser.Analysis(m_hit.collider.tag, m_hit);
+				m_gestureAnalyser.Analysis(m_hit.collider.tag);
+                m_animationAnalyser.Analysis(m_hit.collider.tag);
 
 				// The following code will be executed once for each collider
 				switch (m_hit.collider.tag) {
@@ -34,7 +36,7 @@ namespace GameLogic {
 					case "PathNodeSeaweed":
 						HandleRaycastPathNodeSeaweed();
 						break;
-				}
+                }
 
 				m_curInstanceId = m_hit.transform.gameObject.GetInstanceID();
 			}
@@ -47,10 +49,11 @@ namespace GameLogic {
 			m_actionType = ActionBase.ACTION_TYPE.ACTION_collisionDetection;
 			m_ray = new Ray(m_owner.transform.position, Vector3.down);
 			m_component = m_owner.GetComponent<Player>();
-			m_gestureAnalyser = new GestureAnalyser(m_component.Gesture);
-		}
+            m_gestureAnalyser = m_component.GestureAnalyser;
+            m_animationAnalyser = m_component.AnimationAnalyser;
+        }
 
-		private void HandleRaycastPathNodeRotateLeft () {
+        private void HandleRaycastPathNodeRotateLeft () {
 			m_component.AddAction (ActionFactory.CreateActionRotate (m_owner, 90.0f, ActionRotate.ROTATE_DIRECTION.ROTATE_left));
 		}
 
