@@ -14,6 +14,8 @@ namespace GameLogic {
 #region custom methods
         public AnimationAnalyser(Animator turtle_Animator) {
             m_turtleAnimator = turtle_Animator;
+            m_turtleAnimator.speed = 1.5f;
+
             m_tagAnimationDict.Add("PathNodeNormal"                     , "idle");
             m_tagAnimationDict.Add("PathNodeMoveUp"                     , "swimUp");
             m_tagAnimationDict.Add("PathNodeMoveDown"                   , "swimDown");
@@ -29,7 +31,6 @@ namespace GameLogic {
             m_tagAnimationDict.Add("PathNodeMoveRightAnimationChecker"  , "idle");
             m_tagAnimationDict.Add("PathNodeStart"                      , "idle");
             m_tagAnimationDict.Add("PathNodeEnd"                        , "idle");
-
         }
 
         public void Analysis(string tag) {
