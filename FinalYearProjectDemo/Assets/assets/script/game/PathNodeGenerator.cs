@@ -164,13 +164,13 @@ namespace GameLogic {
 				GetRotationAngle (ref rotation_angle, node_type);
 
 				// Pass attributes to PathNode object
-				prefab_to_refer.GetComponent<PathNode>().Player = m_player;
-				prefab_to_refer.GetComponent<PathNode>().Direction = current_direction;
+				//prefab_to_refer.GetComponent<PathNode>().Player = m_player;
+				//prefab_to_refer.GetComponent<PathNode>().Direction = current_direction;
 
 				// make linkedlist inside PathNode class
-				if (previous_prefab != null) {
-					previous_prefab.GetComponent<PathNode>().NextPathNode = prefab_to_refer;
-				}
+				//if (previous_prefab != null) {
+				//	previous_prefab.GetComponent<PathNode>().NextPathNode = prefab_to_refer;
+				//}
 				previous_prefab = prefab_to_refer;
 			}
 			m_firstPathNode = m_pathNodesList[0];

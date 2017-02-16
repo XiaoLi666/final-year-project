@@ -12,7 +12,6 @@ namespace GameLogic {
 #endregion
 
 #region methods
-		// TODO: going to create a timer to count the game time used!
 		void Start () {
 			component = m_player.GetComponent<Player> ();
 			ActionBase action_raycasting = ActionFactory.CreateActionRaycasting (m_player);

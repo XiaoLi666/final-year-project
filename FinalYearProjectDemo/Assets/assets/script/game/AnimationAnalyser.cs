@@ -34,9 +34,8 @@ namespace GameLogic {
         }
 
         public void Analysis(string tag) {
-            //if (m_tagAnimationDict.ContainsKey(tag) == false) {
-            //    Debug.LogError("Invalid tag for animation!" + tag);
-            //}
+            if (m_tagAnimationDict.ContainsKey(tag) == false)
+                return;
 
             m_turtleAnimator.SetBool(m_previousAnimation, false);
             m_previousAnimation = m_tagAnimationDict[tag];

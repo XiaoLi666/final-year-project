@@ -15,14 +15,19 @@ namespace GameLogic {
 
 #region override methods
         public override bool Update() {
-			m_ray.origin = m_owner.transform.position;
+            // Need to keep analysing the gesture in a loop
+            m_gestureAnalyser.Analysis();
+
+            m_ray.origin = m_owner.transform.position;
 			if (Physics.Raycast(m_ray, out m_hit, m_maxDistance)) {
-				if (m_curInstanceId == m_hit.transform.gameObject.GetInstanceID()) {
-					m_gestureAnalyser.Analysis("null");
+                // To make sure that each object will only be ray casted once
+                if (m_curInstanceId == m_hit.transform.gameObject.GetInstanceID()) {
 					return true;
 				}
 
-				m_gestureAnalyser.Analysis(m_hit.collider.tag);
+                // Below code will only be executed once per path node
+
+                m_gestureAnalyser.SetGestureTag(m_hit.collider.tag);
                 m_animationAnalyser.Analysis(m_hit.collider.tag);
 
 				// The following code will be executed once for each collider

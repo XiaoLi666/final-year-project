@@ -13,32 +13,32 @@ namespace GameLogic {
 #endregion
 
 #region custom methods
-		public GameObject Player {
-			set {
-				m_player = value;
-			}
-			get {
-				return m_player;
-			}
-		}
+		//public GameObject Player {
+		//	set {
+		//		m_player = value;
+		//	}
+		//	get {
+		//		return m_player;
+		//	}
+		//}
 
-		public Vector3 Direction {
-			set {
-				m_direction = value;
-			}
-			get {
-				return m_direction;
-			}
-		}
+		//public Vector3 Direction {
+		//	set {
+		//		m_direction = value;
+		//	}
+		//	get {
+		//		return m_direction;
+		//	}
+		//}
 
-		public GameObject NextPathNode {
-			set {
-				m_nextPathNode = value;
-			}
-			get {
-				return m_nextPathNode;
-			}
-		}
+		//public GameObject NextPathNode {
+		//	set {
+		//		m_nextPathNode = value;
+		//	}
+		//	get {
+		//		return m_nextPathNode;
+		//	}
+		//}
 #endregion
 
 		#region override methods

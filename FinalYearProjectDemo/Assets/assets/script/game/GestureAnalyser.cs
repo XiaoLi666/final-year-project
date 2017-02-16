@@ -6,7 +6,8 @@ namespace GameLogic {
 #region attributes
         private GestureTracker m_gestureTracker = null;
         private Dictionary<string, CharacterAction> m_tagActionDict = new Dictionary<string, CharacterAction>();
-        private string m_cachedTag = "";
+        private string m_tag = "PathNodeStart";
+        private bool m_isCompleted = false;
 #endregion
 
 #region custom methods
@@ -25,17 +26,27 @@ namespace GameLogic {
             m_tagActionDict.Add("PathNodeEnd"           , CharacterAction.Idle);
         }
 
+        public void SetGestureTag(string tag) {
+            if (m_tagActionDict.ContainsKey(tag)) {
+                m_tag = tag;
+                m_isCompleted = false;
+            }
+        }
+
         // Calling per tick
-        public void Analysis(string tag) {
-            if (tag != "null") {
-                m_cachedTag = tag;
+        public void Analysis() {
+            if (m_isCompleted == true) {
+                return;
             }
 
             CharacterAction char_action = GameDictionary.PairedAction[m_gestureTracker.GetIdentifiedGesture()];
-            if (m_tagActionDict.ContainsKey(m_cachedTag) && char_action == m_tagActionDict[m_cachedTag]) {
+            if (char_action == m_tagActionDict[m_tag]) {
                 // Did the correct action!
-                if (char_action != CharacterAction.Idle)
-                    Debug.Log("You just have done a correct action!" + char_action.ToString());
+                m_isCompleted = true;
+
+                if (char_action != CharacterAction.Idle) {
+                    Debug.Log(char_action.ToString());
+                }
             }
         }
 #endregion
