@@ -3,14 +3,14 @@ using UnityEngine;
 
 namespace GameLogic {
     public class GestureAnalyser {
-#region attributes
+        #region attributes
         private GestureTracker m_gestureTracker = null;
         private Dictionary<string, CharacterAction> m_tagActionDict = new Dictionary<string, CharacterAction>();
         private string m_tag = "PathNodeStart";
         private bool m_isCompleted = false;
-#endregion
+        #endregion
 
-#region custom methods
+        #region custom methods
         public GestureAnalyser(GestureTracker gesture_tracker) {
             m_gestureTracker = gesture_tracker;
             m_tagActionDict.Add("PathNodeNormal"        , CharacterAction.Idle);
@@ -26,10 +26,12 @@ namespace GameLogic {
             m_tagActionDict.Add("PathNodeEnd"           , CharacterAction.Idle);
         }
 
-        public void SetGestureTag(string tag) {
-            if (m_tagActionDict.ContainsKey(tag)) {
-                m_tag = tag;
+        public void InitGestureCheck(RaycastHit hit) {
+            if (m_tagActionDict.ContainsKey(hit.collider.tag)) {
+                m_tag = hit.collider.tag;
                 m_isCompleted = false;
+            } else { // if hit by the gesture check terminator, stop checking the gesture
+                m_isCompleted = true;
             }
         }
 
@@ -41,7 +43,6 @@ namespace GameLogic {
 
             CharacterAction char_action = GameDictionary.PairedAction[m_gestureTracker.GetIdentifiedGesture()];
             if (char_action == m_tagActionDict[m_tag]) {
-                // Did the correct action!
                 m_isCompleted = true;
 
                 if (char_action != CharacterAction.Idle) {
@@ -49,6 +50,6 @@ namespace GameLogic {
                 }
             }
         }
-#endregion
+        #endregion
     }
 }

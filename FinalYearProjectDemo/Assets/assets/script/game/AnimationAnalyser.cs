@@ -9,26 +9,29 @@ namespace GameLogic {
         private Animator m_turtleAnimator;
         private delegate void AnimationDelegate(string tag);
         private Dictionary<string, string> m_tagAnimationDict = new Dictionary<string, string>();
-#endregion
+        #endregion
 
-#region custom methods
+        #region custom methods
         public AnimationAnalyser(Animator turtle_Animator) {
             m_turtleAnimator = turtle_Animator;
-            m_turtleAnimator.speed = 1.5f;
-
+            
             m_tagAnimationDict.Add("PathNodeNormal"                     , "idle");
             m_tagAnimationDict.Add("PathNodeMoveUp"                     , "swimUp");
             m_tagAnimationDict.Add("PathNodeMoveDown"                   , "swimDown");
-            m_tagAnimationDict.Add("PathNodeMoveLeft"                   , "swimRight");
-            m_tagAnimationDict.Add("PathNodeMoveRight"                  , "swimLeft");
+            m_tagAnimationDict.Add("PathNodeMoveLeft"                   , "swimLeft");
+            m_tagAnimationDict.Add("PathNodeMoveRight"                  , "swimRight");
             m_tagAnimationDict.Add("PathNodeRotateLeft"                 , "rotateLeft");
             m_tagAnimationDict.Add("PathNodeRotateRight"                , "rotateRight");
-            m_tagAnimationDict.Add("PathNodeSeaweed"                    , "eat");
+            m_tagAnimationDict.Add("PathNodeSeaweed"                    , "idle");
             m_tagAnimationDict.Add("PathNodeSpeedup"                    , "swimForward");
             m_tagAnimationDict.Add("PathNodeMoveUpAnimationChecker"     , "swimDown");
             m_tagAnimationDict.Add("PathNodeMoveDownAnimationChecker"   , "swimUp");
             m_tagAnimationDict.Add("PathNodeMoveLeftAnimationChecker"   , "idle");
             m_tagAnimationDict.Add("PathNodeMoveRightAnimationChecker"  , "idle");
+            m_tagAnimationDict.Add("PathNodeRotateLeftAnimationChecker" , "idle");
+            m_tagAnimationDict.Add("PathNodeRotateRightAnimationChecker", "idle");
+            m_tagAnimationDict.Add("PathNodeSeaweedAnimationChecker"    , "idle");
+            m_tagAnimationDict.Add("PathNodeSpeedupAnimationChecker"    , "idle");
             m_tagAnimationDict.Add("PathNodeStart"                      , "idle");
             m_tagAnimationDict.Add("PathNodeEnd"                        , "idle");
         }
@@ -41,6 +44,6 @@ namespace GameLogic {
             m_previousAnimation = m_tagAnimationDict[tag];
             m_turtleAnimator.SetBool(m_previousAnimation, true);
         }
-#endregion
+        #endregion
     }
 }

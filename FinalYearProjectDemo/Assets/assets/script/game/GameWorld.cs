@@ -3,22 +3,26 @@ using System.Collections;
 
 namespace GameLogic {
 	public class GameWorld : MonoBehaviour {
-#region attributes
+		#region attributes
 		[SerializeField]
 		private GameObject m_player;
 		[SerializeField]
 		private GameObject m_playerModel; // TODO: must fix this
 		private Player component = null;
-#endregion
 
-#region methods
+		private float m_timer;
+		#endregion
+
+		#region methods
 		void Start () {
 			component = m_player.GetComponent<Player> ();
 			ActionBase action_raycasting = ActionFactory.CreateActionRaycasting (m_player);
 			component.AddAction (action_raycasting);
 		}
 
-		void Update () {
+		private void FixedUpdate() {
+			m_timer += Time.deltaTime;
+            Debug.Log(m_timer.ToString("0.00"));
 		}
 
 		static public void StartGame() {
@@ -32,6 +36,6 @@ namespace GameLogic {
 		static public void ResumeGame() {
 			Time.timeScale = 1;
 		}
-#endregion
+		#endregion
 	}
 }

@@ -181,6 +181,7 @@
     <Compile Include="Assets\assets\script\game\ActionRotate.cs" />
     <Compile Include="Assets\assets\script\game\AnimatedProjector.cs" />
     <Compile Include="Assets\assets\script\game\AnimationAnalyser.cs" />
+    <Compile Include="Assets\assets\script\game\CustomGameMapConfig.cs" />
     <Compile Include="Assets\assets\script\game\DrawWayPoint.cs" />
     <Compile Include="Assets\assets\script\game\GameMap.cs" />
     <Compile Include="Assets\assets\script\game\GameWorld.cs" />
@@ -188,10 +189,11 @@
     <Compile Include="Assets\assets\script\game\PathNode.cs" />
     <Compile Include="Assets\assets\script\game\PathNodeGenerator.cs" />
     <Compile Include="Assets\assets\script\game\Player.cs" />
+    <Compile Include="Assets\assets\script\game\PlayerDataCollection.cs" />
     <Compile Include="Assets\assets\script\leap_motion\GameDictionary.cs" />
     <Compile Include="Assets\assets\script\leap_motion\GestureTracker.cs" />
     <Compile Include="Assets\assets\script\leap_motion\HandStateTracker.cs" />
-    <Compile Include="Assets\assets\script\ui\StartGameOnClick.cs" />
+    <Compile Include="Assets\assets\script\ui\UIManager.cs" />
     <Compile Include="Assets\assets\sensor\LeapC\Arm.cs" />
     <Compile Include="Assets\assets\sensor\LeapC\Bone.cs" />
     <Compile Include="Assets\assets\sensor\LeapC\CSharpExtensions.cs" />
