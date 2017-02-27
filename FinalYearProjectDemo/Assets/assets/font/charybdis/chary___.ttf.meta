@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 5c8c8ef13f8cae643a40d089314a2161
+timeCreated: 1488161137
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Charybdis
+  fontNames:
+  - Charybdis
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

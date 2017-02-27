@@ -226,6 +226,8 @@
     <None Include="Assets\OtherPackages\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
     <None Include="Assets\OtherPackages\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
     <None Include="Assets\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
+    <None Include="Assets\assets\font\charybdis\ReadMe.txt" />
+    <None Include="Assets\assets\font\motion-control\Read Me If You Feel Like It.txt" />
     <None Include="Assets\assets\material\Water\Sources\Shaders\FX-Water.shader" />
     <None Include="Assets\assets\material\Water\Water4\Sources\Shaders\FX-SimpleWater4.shader" />
     <None Include="Assets\assets\material\Water\Water4\Sources\Shaders\FX-Water4.shader" />
