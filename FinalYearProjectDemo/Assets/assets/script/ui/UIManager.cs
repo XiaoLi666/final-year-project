@@ -24,6 +24,7 @@ namespace UI {
         [SerializeField] private InputField m_pathNodeLimitationInputField;
         [SerializeField] private List<Text> m_maxLimitationText;
         private GameObject m_currentView;
+        private int m_pathNodeLimitation;
 
         public enum CONFIG_TYPE {
             CONFIG_TYPE_moveLeft = 0,
@@ -45,6 +46,65 @@ namespace UI {
         #endregion
 
         #region custom methods
+        #region Main view UI logic
+        public void MainViewStartBtnClick() {
+            ShowView(m_selectionView);
+        }
+        public void MainViewSettingBtnClick() {
+            ShowView(m_setLimitationView);
+        }
+        #endregion
+
+        #region Selection view UI logic
+        public void SelectionViewIntroductionBtnClick() {
+            ShowView(m_introductonView);
+        }
+        public void SelectionViewTutorialModeBtnClick(int id) {
+            PathNodeGenerator.m_generationMode = PathNodeGenerator.GENERATION_MODE.GENERATION_manual;
+            SceneManager.LoadScene(id);
+        }
+        public void SelectionViewCustomModeBtnClick(int id) {
+            PathNodeGenerator.m_generationMode = PathNodeGenerator.GENERATION_MODE.GENERATION_auto;
+            SceneManager.LoadScene(id);
+        }
+        public void SelectionViewBackBtnClick() {
+            ShowView(m_mainView);
+        }
+        #endregion
+
+        #region Introduction view UI logic
+        public void IntroductionViewBackBtnClick() {
+            ShowView(m_selectionView);
+        }
+        #endregion
+
+        #region Set limitation view UI logic
+        public void SetLimitationViewNextBtnClick() {
+            // Save the current config
+            m_pathNodeLimitation = Convert.ToInt32(m_pathNodeLimitationInputField.text);
+            ShowView(m_customModeView);
+        }
+        public void SetLimitationViewBackBtnClick() {
+            ShowView(m_mainView);
+        }
+        #endregion
+
+        #region Custom mode view UI logic
+        public void CustomModeViewOKBtnClick() {
+            MapData map_data = new MapData();
+            for (int i = 0; i < m_inputFieldList.Count; ++i) {
+                map_data.MapConfigList.Add(Convert.ToInt32(m_inputFieldList[i].text));
+            }
+            map_data.PathNodeCountLimit = m_pathNodeLimitation;
+            DataCollection.GetInstance().SaveMapData(map_data);
+            ShowView(m_mainView);
+        }
+        public void CustomModeViewBackBtnClick() {
+            ShowView(m_setLimitationView);
+        }
+        #endregion
+
+        #region Other utility functions
         // Slider value change functions
         public void ConfigSliderValueChangeCheck(int index) {
             SyncInputFieldValueBySliderValue(index);
@@ -71,59 +131,6 @@ namespace UI {
             SyncSliderValueByInputFieldValue(index);
         }
 
-
-        // UI buttons logic
-        // Main view
-        public void MainViewStartBtnClick() {
-            ShowView(m_selectionView);
-        }
-        public void MainViewSettingBtnClick() {
-            ShowView(m_setLimitationView);
-        }
-        
-        // Selection view
-        public void SelectionViewIntroductionBtnClick() {
-            ShowView(m_introductonView);
-        }
-        public void SelectionViewTutorialModeBtnClick(int id) {
-            PathNodeGenerator.m_generationMode = PathNodeGenerator.GENERATION_MODE.GENERATION_manual;
-            SceneManager.LoadScene(id);
-        }
-        public void SelectionViewCustomModeBtnClick(int id) {
-            PathNodeGenerator.m_generationMode = PathNodeGenerator.GENERATION_MODE.GENERATION_auto;
-            SceneManager.LoadScene(id);
-        }
-        public void SelectionViewBackBtnClick() {
-            ShowView(m_mainView);
-        }
-
-        // Introduction view
-        public void IntroductionViewBackBtnClick() {
-            ShowView(m_selectionView);
-        }
-
-        // Set limitation view
-        public void SetLimitationViewNextBtnClick() {
-            // Save the current config
-            m_customConfig.m_pathNodeLimitation = Convert.ToInt32(m_pathNodeLimitationInputField.text);
-            ShowView(m_customModeView);
-        }
-        public void SetLimitationViewBackBtnClick() {
-            ShowView(m_mainView);
-        }
-        
-        // Custom mode view
-        public void CustomModeViewOKBtnClick() {
-            // Save the current config
-            for (int i = 0; i < m_inputFieldList.Count; ++ i) {
-                m_customConfig.m_configList[i] = (Convert.ToInt32(m_inputFieldList[i].text));
-            }
-            ShowView(m_mainView);
-        }
-        public void CustomModeViewBackBtnClick() {
-            ShowView(m_setLimitationView);
-        }
-        
         private void ShowView(GameObject view) {
             if (m_currentView == view) return;
             if (m_currentView != null) m_currentView.SetActive(false);
@@ -131,23 +138,29 @@ namespace UI {
             m_currentView = view;
 
             if (m_currentView == m_setLimitationView) {
-                m_pathNodeLimitationInputField.text = m_customConfig.m_pathNodeLimitation.ToString();
+                DataCollection.GetInstance().LoadMapData();
+                if (DataCollection.GetInstance().MapData != null) {
+                    m_pathNodeLimitationInputField.text = DataCollection.GetInstance().MapData.PathNodeCountLimit.ToString();
+                }
             } else if (m_currentView == m_customModeView) {
-                if (m_customConfig.m_configList.Count > 0) {
-                    for (int i = 0; i < m_customConfig.m_configList.Count; ++i) {
-                        SetValueForInputField(i, m_customConfig.m_configList[i].ToString());
+                DataCollection.GetInstance().LoadMapData();
+                if (DataCollection.GetInstance().MapData != null) {
+                    if (m_customConfig.m_configList.Count > 0) {
+                        for (int i = 0; i < m_customConfig.m_configList.Count; ++i) {
+                            SetValueForInputField(i, DataCollection.GetInstance().MapData.MapConfigList[i].ToString());
+                        }
                     }
                 }
-
+                // Update the display
                 for (int i = 0; i < m_maxLimitationText.Count; ++i) {
-                    m_maxLimitationText[i].text = m_customConfig.m_pathNodeLimitation.ToString();
+                    m_maxLimitationText[i].text = m_pathNodeLimitation.ToString();
                 }
-
                 for (int i = 0; i < m_sliderList.Count; ++i) {
-                    m_sliderList[i].maxValue = m_customConfig.m_pathNodeLimitation;
+                    m_sliderList[i].maxValue = m_pathNodeLimitation;
                 }
             }
         }
+        #endregion
         #endregion
     }
 }

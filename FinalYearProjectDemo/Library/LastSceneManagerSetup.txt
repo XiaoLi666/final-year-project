@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/assets/scene/fyp_demo.unity
+- path: Assets/assets/scene/ui.unity
   isLoaded: 1
   isActive: 1

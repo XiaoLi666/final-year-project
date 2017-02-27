@@ -12,7 +12,7 @@ namespace GameLogic {
 
 		#region methods
 		void Start () {
-            // Initialization for player
+			// Initialization for player
 			component = m_player.GetComponent<Player> ();
 			ActionBase action_raycasting = ActionFactory.CreateActionRaycasting (m_player);
 			component.AddAction (action_raycasting);

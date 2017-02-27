@@ -2,15 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerDataCollection : MonoBehaviour {
+namespace GameLogic {
+    public class PlayerDataCollection {
+        #region attributes
+        private static PlayerDataCollection m_instance = new PlayerDataCollection();
+        private string m_name { get; set; }
+        #endregion
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        #region custom methods
+        private PlayerDataCollection() {
+        }
+
+        public static PlayerDataCollection GetInstance() {
+            return m_instance;
+        }
+        #endregion
+    }
 }
