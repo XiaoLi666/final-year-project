@@ -32,7 +32,7 @@ namespace UI {
             CONFIG_TYPE_rotateLeft = 4,
             CONFIG_TYPE_rotateRight = 5,
             CONFIG_TYPE_seaweed = 6,
-            CONFIG_TYPE_speedup=  7
+            CONFIG_TYPE_speedup = 7
         }
         #endregion
 

@@ -11,7 +11,7 @@ namespace GameLogic {
         private MapData m_mapData = null;
         private PlayerData m_playerData = null;
 
-        public MapData MapData {
+		public MapData MapData {
             get { return m_mapData; }
             set { m_mapData = value; }
         }
@@ -23,7 +23,8 @@ namespace GameLogic {
 
         #region custom methods
         private DataCollection() {
-        }
+			LoadMapData();
+		}
 
         public static DataCollection GetInstance() {
             return m_instance;
@@ -49,11 +50,14 @@ namespace GameLogic {
         }
 
         public void SavePlayerData() {
-            BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Create(m_playerDataPath);
-            bf.Serialize(file, m_playerData);
-            file.Close();
-        }
+			//BinaryFormatter bf = new BinaryFormatter();
+			//FileStream file = File.Create(m_playerDataPath);
+			//bf.Serialize(file, m_playerData);
+			//file.Close();
+
+			// TextWriter tw = new StreamWriter("play_data.txt", true);
+			File.WriteAllText("play_data.txt", PlayingData.GetInstance().ToString());
+		}
 
         public void LoadPlayerData() {
             BinaryFormatter bf = new BinaryFormatter();

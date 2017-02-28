@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.5.1f1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -191,10 +193,11 @@
     <Compile Include="Assets\assets\script\game\PathNodeGenerator.cs" />
     <Compile Include="Assets\assets\script\game\Player.cs" />
     <Compile Include="Assets\assets\script\game\PlayerData.cs" />
-    <Compile Include="Assets\assets\script\game\PlayerDataCollection.cs" />
+    <Compile Include="Assets\assets\script\game\PlayingData.cs" />
     <Compile Include="Assets\assets\script\leap_motion\GameDictionary.cs" />
     <Compile Include="Assets\assets\script\leap_motion\GestureTracker.cs" />
     <Compile Include="Assets\assets\script\leap_motion\HandStateTracker.cs" />
+    <Compile Include="Assets\assets\script\ui\HUDManager.cs" />
     <Compile Include="Assets\assets\script\ui\UIManager.cs" />
     <Compile Include="Assets\assets\sensor\LeapC\Arm.cs" />
     <Compile Include="Assets\assets\sensor\LeapC\Bone.cs" />

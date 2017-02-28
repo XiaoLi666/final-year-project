@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace GameLogic {
 	public class ActionRaycasting : ActionBase {
-        #region attributes
+		#region attributes
 		private int m_curInstanceId = -1;
 		private const float m_maxDistance = 10.0f;
 		private Ray m_ray;
@@ -11,9 +11,9 @@ namespace GameLogic {
 		private Player m_component = null;
 		private GestureAnalyser m_gestureAnalyser = null;
 		private AnimationAnalyser m_animationAnalyser = null;
-        #endregion
+		#endregion
 
-        #region override methods
+		#region override methods
 		public override bool Update() {
 			// Need to keep analysing the gesture in a loop
 			m_gestureAnalyser.Analysis();
@@ -40,20 +40,23 @@ namespace GameLogic {
 					case "PathNodeSeaweed":
 						HandleRaycastPathNodeSeaweed();
 						break;
+					case "PathNodeEnd":
+						HandleRaycastPathNodeEnd();
+						break;
 				}
 
 				m_curInstanceId = m_hit.transform.gameObject.GetInstanceID();
 			}
 			return true;
 		}
-        #endregion
+		#endregion
 
-        #region custom methods
+		#region custom methods
 		public ActionRaycasting(GameObject owner) : base(owner) {
 			m_actionType = ActionBase.ACTION_TYPE.ACTION_collisionDetection;
 			m_ray = new Ray(m_owner.transform.position, Vector3.down);
 			m_component = m_owner.GetComponent<Player>();
-            m_gestureAnalyser = m_component.GestureAnalyser;
+			m_gestureAnalyser = m_component.GestureAnalyser;
 			m_animationAnalyser = m_component.AnimationAnalyser;
 		}
 
@@ -73,6 +76,10 @@ namespace GameLogic {
 				iTween.Resume ();
 			}
 		}
-        #endregion
+
+		private void HandleRaycastPathNodeEnd() {
+			m_component.GameWorld.GameEnd();
+		}
+		#endregion
 	}
 }
