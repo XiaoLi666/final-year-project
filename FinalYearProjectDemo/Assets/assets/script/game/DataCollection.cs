@@ -12,20 +12,12 @@ namespace GameLogic {
         private PlayerData m_playerData = null;
 
         public MapData MapData {
-            get {
-                return m_mapData;
-            }
-            set {
-                m_mapData = value;
-            }
+            get { return m_mapData; }
+            set { m_mapData = value; }
         }
         public PlayerData PlayerData {
-            get {
-                return m_playerData;
-            }
-            set {
-                m_playerData = value;
-            }
+            get { return m_playerData; }
+            set { m_playerData = value; }
         }
         #endregion
 

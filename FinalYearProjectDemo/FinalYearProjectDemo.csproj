@@ -181,7 +181,6 @@
     <Compile Include="Assets\assets\script\game\ActionRotate.cs" />
     <Compile Include="Assets\assets\script\game\AnimatedProjector.cs" />
     <Compile Include="Assets\assets\script\game\AnimationAnalyser.cs" />
-    <Compile Include="Assets\assets\script\game\CustomGameMapConfig.cs" />
     <Compile Include="Assets\assets\script\game\DataCollection.cs" />
     <Compile Include="Assets\assets\script\game\DrawWayPoint.cs" />
     <Compile Include="Assets\assets\script\game\GameMap.cs" />

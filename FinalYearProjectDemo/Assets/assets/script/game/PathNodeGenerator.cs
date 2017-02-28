@@ -4,14 +4,12 @@ using System.Collections.Generic;
 namespace GameLogic {
 	public class PathNodeGenerator : MonoBehaviour {
 		#region attributes
-		static public GENERATION_MODE m_generationMode;
-
+		static public GENERATION_MODE m_generationMode = GENERATION_MODE.GENERATION_manual; // by default is manual
 		[SerializeField] private GameObject m_player;
 		[SerializeField] private GameObject m_playerModel;
 		[SerializeField] private GameObject[] m_pathNodes;
 		[SerializeField] private PathNodeGenerator.PATHNODE_TYPE[] m_pathNodeTypes;
 		[SerializeField] private GameMap m_map;
-		[SerializeField] private CustomGameMapConfig m_config;
 		[SerializeField] private Vector3 m_startLocation;
 		[SerializeField] private Vector3 m_defaultDirection;
 		[SerializeField] private float m_generateDistance;
@@ -32,7 +30,13 @@ namespace GameLogic {
 		private Dictionary<PATHNODE_TYPE, int> m_pathNodeRemainingDict = new Dictionary<PATHNODE_TYPE, int>();
 		private Dictionary<PATHNODE_TYPE, GameObject> m_pathNodeDict = new Dictionary<PATHNODE_TYPE, GameObject>(); // created by m_pathNodes and m_pathNodeTypes
 
-		public enum PATHNODE_TYPE {
+        public Transform[] WaypointsTransformList {
+            get {
+                return m_waypointsTransformList;
+            }
+        }
+
+        public enum PATHNODE_TYPE {
 			PATHNODE_end,
 			PATHNODE_moveDown,
 			PATHNODE_moveLeft,
@@ -50,7 +54,7 @@ namespace GameLogic {
 			GENERATION_manual,
 			GENERATION_auto
 		}
-		#endregion
+        #endregion
 
 		#region override methods
 		void Start () {
@@ -72,7 +76,7 @@ namespace GameLogic {
 				// Render path gizmo
 				RenderPathGizmo ();
 				// TODO: going to find a proper place for this line of code
-				iTween.MoveTo (m_player, iTween.Hash ("path", m_waypointsTransformList, "speed", 2.0f, "easetype", "linear"));
+				// iTween.MoveTo (m_player, iTween.Hash ("path", m_waypointsTransformList, "speed", 2.0f, "easetype", "linear"));
 			}
 		}
 
@@ -81,19 +85,15 @@ namespace GameLogic {
 				iTween.DrawPath (m_waypointsTransformList, Color.blue);
 			}
 		}
-		#endregion
+        #endregion
 
-		#region custom methods
-		// Path generate function
-		private List<PathNodeGenerator.PATHNODE_TYPE> Generate() {
+        #region custom methods
+        // Path generate function
+        private List<PathNodeGenerator.PATHNODE_TYPE> Generate() {
 			switch (m_generationMode) {
 			case GENERATION_MODE.GENERATION_manual:
 				return m_map.m_pathNodeTypes;
 			case GENERATION_MODE.GENERATION_auto: {
-                        //for (int i = 0; i < m_config.m_configList.Count; ++i) {
-                        //	m_randomGenerationCount.Add(m_config.m_configList[i]);
-                        //}
-
                         for (int i = 0; i < DataCollection.GetInstance().MapData.MapConfigList.Count; ++i) {
                         	m_randomGenerationCount.Add(DataCollection.GetInstance().MapData.MapConfigList[i]);
                         }

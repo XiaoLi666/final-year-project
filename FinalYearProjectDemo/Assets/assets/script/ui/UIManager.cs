@@ -8,8 +8,6 @@ using GameLogic;
 namespace UI {
     public class UIManager : MonoBehaviour {
         #region attributes
-        // custom map data
-        [SerializeField] private CustomGameMapConfig m_customConfig; // save data locally (as local database), for demo
         // Views
         [SerializeField] private GameObject m_mainView;
         [SerializeField] private GameObject m_selectionView;
@@ -21,7 +19,7 @@ namespace UI {
         // Sliders
         [SerializeField] private List<Slider> m_sliderList;
         // Path Node limitation
-        [SerializeField] private InputField m_pathNodeLimitationInputField;
+        [SerializeField] private InputField m_pathNodeCountLimitInputField;
         [SerializeField] private List<Text> m_maxLimitationText;
         private GameObject m_currentView;
         private int m_pathNodeLimitation;
@@ -81,7 +79,7 @@ namespace UI {
         #region Set limitation view UI logic
         public void SetLimitationViewNextBtnClick() {
             // Save the current config
-            m_pathNodeLimitation = Convert.ToInt32(m_pathNodeLimitationInputField.text);
+            m_pathNodeLimitation = Convert.ToInt32(m_pathNodeCountLimitInputField.text);
             ShowView(m_customModeView);
         }
         public void SetLimitationViewBackBtnClick() {
@@ -118,6 +116,12 @@ namespace UI {
             SyncSliderValueByInputFieldValue(index);
         }
 
+        public void SetLimitationViewValueChangeCheck() {
+            if (m_pathNodeCountLimitInputField.text == "") {
+                m_pathNodeCountLimitInputField.text = "0";
+            }
+        }
+
         private void SyncInputFieldValueBySliderValue(int index) {
             m_inputFieldList[index].text = m_sliderList[index].value.ToString();
         }
@@ -138,26 +142,35 @@ namespace UI {
             m_currentView = view;
 
             if (m_currentView == m_setLimitationView) {
-                DataCollection.GetInstance().LoadMapData();
-                if (DataCollection.GetInstance().MapData != null) {
-                    m_pathNodeLimitationInputField.text = DataCollection.GetInstance().MapData.PathNodeCountLimit.ToString();
-                }
+                InitSetLimitationView();
             } else if (m_currentView == m_customModeView) {
-                DataCollection.GetInstance().LoadMapData();
-                if (DataCollection.GetInstance().MapData != null) {
-                    if (m_customConfig.m_configList.Count > 0) {
-                        for (int i = 0; i < m_customConfig.m_configList.Count; ++i) {
-                            SetValueForInputField(i, DataCollection.GetInstance().MapData.MapConfigList[i].ToString());
-                        }
+                InitCustomModeView();
+            }
+        }
+
+        private void InitSetLimitationView() {
+            DataCollection.GetInstance().LoadMapData();
+            if (DataCollection.GetInstance().MapData != null) {
+                m_pathNodeCountLimitInputField.text = DataCollection.GetInstance().MapData.PathNodeCountLimit.ToString();
+            }
+        }
+
+        private void InitCustomModeView() {
+            DataCollection.GetInstance().LoadMapData();
+            MapData map_data = DataCollection.GetInstance().MapData;
+            if (map_data != null) {
+                if (map_data.MapConfigList.Count > 0) {
+                    for (int i = 0; i < map_data.MapConfigList.Count; ++i) {
+                        SetValueForInputField(i, map_data.MapConfigList[i].ToString());
                     }
                 }
-                // Update the display
-                for (int i = 0; i < m_maxLimitationText.Count; ++i) {
-                    m_maxLimitationText[i].text = m_pathNodeLimitation.ToString();
-                }
-                for (int i = 0; i < m_sliderList.Count; ++i) {
-                    m_sliderList[i].maxValue = m_pathNodeLimitation;
-                }
+            }
+            // Update the display
+            for (int i = 0; i < m_maxLimitationText.Count; ++i) {
+                m_maxLimitationText[i].text = m_pathNodeLimitation.ToString();
+            }
+            for (int i = 0; i < m_sliderList.Count; ++i) {
+                m_sliderList[i].maxValue = m_pathNodeLimitation;
             }
         }
         #endregion

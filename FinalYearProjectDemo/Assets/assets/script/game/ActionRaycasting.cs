@@ -53,7 +53,7 @@ namespace GameLogic {
 			m_actionType = ActionBase.ACTION_TYPE.ACTION_collisionDetection;
 			m_ray = new Ray(m_owner.transform.position, Vector3.down);
 			m_component = m_owner.GetComponent<Player>();
-			m_gestureAnalyser = m_component.GestureAnalyser;
+            m_gestureAnalyser = m_component.GestureAnalyser;
 			m_animationAnalyser = m_component.AnimationAnalyser;
 		}
 
