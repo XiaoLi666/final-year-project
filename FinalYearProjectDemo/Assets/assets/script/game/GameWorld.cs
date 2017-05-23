@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
-using System.Collections;
-using UI;
+using GameUI;
 
 namespace GameLogic {
 	public class GameWorld : MonoBehaviour {
@@ -14,8 +12,13 @@ namespace GameLogic {
 		private Player m_player;
 		private HUDManager m_HUDManager;
 		private Transform[] m_waypointsTransformList;
-
+		static public GAME_MODE m_mode;
+		static public float m_speed;
 		public float Timer { get { return m_timer; } }
+		public enum GAME_MODE {
+			GAME_MODE_tutorial,
+			GAME_MODE_custom
+		}
 		#endregion
 
 		#region override methods
@@ -43,7 +46,7 @@ namespace GameLogic {
 				m_playerGameObject, 
 				iTween.Hash(
 					"path", m_waypointsTransformList, 
-					"speed", m_player.MoveSpeed, 
+					"speed", m_player.MoveSpeed * m_speed, 
 					"easetype", 
 					"linear"));
             m_start = true;
@@ -51,7 +54,14 @@ namespace GameLogic {
 
 		public void GameEnd() {
 			m_gameEnd = true;
-			m_HUDManager.ShowResultPanel();
+			switch (m_mode) {
+				case GAME_MODE.GAME_MODE_tutorial:
+					m_HUDManager.ShowTutorialModeCompletionPanel();
+					break;
+				case GAME_MODE.GAME_MODE_custom:
+					m_HUDManager.ShowResultPanel();
+					break;
+			}
 		}
 		
 		public void PauseGame() {
@@ -62,6 +72,22 @@ namespace GameLogic {
 		public void ResumeGame() {
 			Time.timeScale = 1;
 			iTween.Resume();
+		}
+
+		public void ShowHUDComplete() {
+			m_HUDManager.ShowComplete();
+		}
+
+		public void ShowHUDMiss() {
+			m_HUDManager.ShowMiss();
+		}
+
+		public void DisplayTutorial(string tag) {
+			m_HUDManager.DisplayTutorialByTag(tag);
+		}
+
+		public void UndisplayTutorial() {
+			m_HUDManager.UndisplayTutorial();
 		}
 		#endregion
 	}

@@ -1,1 +1,110 @@
-3/1/2017 1:15:00 AM
+####################
+3/1/2017 11:52:32 AM
+PathNodeMoveLeft: 0/1
+PathNodeMoveRight: 0/2
+PathNodeMoveUp: 0/3
+PathNodeMoveDown: 0/4
+PathNodeRotateLeft: 0/5
+PathNodeRotateRight: 0/6
+PathNodeSeaweed: 0/7
+PathNodeSpeedup: 0/8
+####################
+####################
+5/8/2017 9:32:53 AM
+PathNodeMoveLeft: 0/1
+PathNodeMoveRight: 0/1
+PathNodeMoveUp: 0/1
+PathNodeMoveDown: 0/1
+PathNodeRotateLeft: 0/1
+PathNodeRotateRight: 0/1
+PathNodeSeaweed: 0/1
+PathNodeSpeedup: 0/1
+####################
+####################
+5/8/2017 9:43:50 AM
+PathNodeMoveLeft: 0/1
+PathNodeMoveRight: 0/1
+PathNodeMoveUp: 0/1
+PathNodeMoveDown: 0/1
+PathNodeRotateLeft: 0/1
+PathNodeRotateRight: 0/1
+PathNodeSeaweed: 0/1
+PathNodeSpeedup: 0/1
+####################
+####################
+5/8/2017 10:18:05 AM
+PathNodeMoveLeft: 0/1
+PathNodeMoveRight: 0/1
+PathNodeMoveUp: 0/1
+PathNodeMoveDown: 0/1
+PathNodeRotateLeft: 0/1
+PathNodeRotateRight: 0/1
+PathNodeSeaweed: 0/1
+PathNodeSpeedup: 0/1
+####################
+####################
+5/8/2017 12:00:29 PM
+PathNodeMoveLeft: 0/1
+PathNodeMoveRight: 0/1
+PathNodeMoveUp: 0/1
+PathNodeMoveDown: 0/1
+PathNodeRotateLeft: 0/1
+PathNodeRotateRight: 0/1
+PathNodeSeaweed: 0/1
+PathNodeSpeedup: 0/1
+####################
+####################
+5/8/2017 12:01:40 PM
+PathNodeMoveLeft: 0/1
+PathNodeMoveRight: 0/1
+PathNodeMoveUp: 0/1
+PathNodeMoveDown: 0/1
+PathNodeRotateLeft: 0/1
+PathNodeRotateRight: 0/1
+PathNodeSeaweed: 0/1
+PathNodeSpeedup: 0/1
+####################
+####################
+5/8/2017 3:49:04 PM
+PathNodeMoveLeft: 0/2
+PathNodeMoveRight: 0/2
+PathNodeMoveUp: 0/2
+PathNodeMoveDown: 0/2
+PathNodeRotateLeft: 0/2
+PathNodeRotateRight: 0/2
+PathNodeSeaweed: 0/2
+PathNodeSpeedup: 0/2
+####################
+####################
+5/8/2017 5:22:17 PM
+PathNodeMoveLeft: 0/2
+PathNodeMoveRight: 0/2
+PathNodeMoveUp: 0/2
+PathNodeMoveDown: 0/2
+PathNodeRotateLeft: 0/2
+PathNodeRotateRight: 0/2
+PathNodeSeaweed: 0/2
+PathNodeSpeedup: 0/2
+####################
+####################
+5/9/2017 8:59:52 AM
+PathNodeMoveLeft: 0/2
+PathNodeMoveRight: 0/2
+PathNodeMoveUp: 0/2
+PathNodeMoveDown: 0/2
+PathNodeRotateLeft: 0/2
+PathNodeRotateRight: 0/2
+PathNodeSeaweed: 0/2
+PathNodeSpeedup: 0/2
+####################
+####################
+5/9/2017 9:03:43 AM
+PathNodeMoveLeft: 0/2
+PathNodeMoveRight: 0/2
+PathNodeMoveUp: 0/2
+PathNodeMoveDown: 0/2
+PathNodeRotateLeft: 0/2
+PathNodeRotateRight: 0/2
+PathNodeSeaweed: 0/2
+PathNodeSpeedup: 0/2
+####################

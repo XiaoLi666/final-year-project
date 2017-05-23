@@ -241,6 +241,7 @@
     <None Include="Assets\assets\sensor\LeapMotion\Version.txt" />
     <None Include="Assets\assets\sensor\LeapMotion\readme.txt" />
     <None Include="Assets\assets\sensor\Plugins\donotdelete.txt" />
+    <None Include="Assets\sumMusic\README.md.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

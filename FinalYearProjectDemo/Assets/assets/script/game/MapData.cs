@@ -6,6 +6,7 @@ namespace GameLogic {
     public class MapData {
         private List<int> m_mapConfigList = new List<int>();
         private int m_pathNodeCountLimit;
+		private float m_speed;
 
         public List<int> MapConfigList {
             get {
@@ -24,5 +25,14 @@ namespace GameLogic {
                 m_pathNodeCountLimit = value;
             }
         }
+
+		public float Speed {
+			get {
+				return m_speed;
+			}
+			set {
+				m_speed = value;
+			}
+		}
     }
 }

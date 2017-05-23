@@ -176,14 +176,17 @@
     <Compile Include="Assets\assets\material\Water\Water4\Sources\Scripts\SpecularLighting.cs" />
     <Compile Include="Assets\assets\material\Water\Water4\Sources\Scripts\WaterBase.cs" />
     <Compile Include="Assets\assets\material\Water\Water4\Sources\Scripts\WaterTile.cs" />
-    <Compile Include="Assets\assets\script\game\ActionBase.cs" />
-    <Compile Include="Assets\assets\script\game\ActionEatSeaweed.cs" />
-    <Compile Include="Assets\assets\script\game\ActionFactory.cs" />
-    <Compile Include="Assets\assets\script\game\ActionRaycasting.cs" />
-    <Compile Include="Assets\assets\script\game\ActionRotate.cs" />
+    <Compile Include="Assets\assets\script\event\EventHandlerGame.cs" />
+    <Compile Include="Assets\assets\script\event\EventHandlerUI.cs" />
+    <Compile Include="Assets\assets\script\action\ActionBase.cs" />
+    <Compile Include="Assets\assets\script\action\ActionEatSeaweed.cs" />
+    <Compile Include="Assets\assets\script\action\ActionFactory.cs" />
+    <Compile Include="Assets\assets\script\action\ActionPlayCustomMode.cs" />
+    <Compile Include="Assets\assets\script\action\ActionPlayTutorialMode.cs" />
+    <Compile Include="Assets\assets\script\action\ActionRaycasting.cs" />
+    <Compile Include="Assets\assets\script\action\ActionRotate.cs" />
     <Compile Include="Assets\assets\script\game\AnimatedProjector.cs" />
     <Compile Include="Assets\assets\script\game\AnimationAnalyser.cs" />
-    <Compile Include="Assets\assets\script\game\DataCollection.cs" />
     <Compile Include="Assets\assets\script\game\DrawWayPoint.cs" />
     <Compile Include="Assets\assets\script\game\GameMap.cs" />
     <Compile Include="Assets\assets\script\game\GameWorld.cs" />
@@ -193,10 +196,14 @@
     <Compile Include="Assets\assets\script\game\PathNodeGenerator.cs" />
     <Compile Include="Assets\assets\script\game\Player.cs" />
     <Compile Include="Assets\assets\script\game\PlayerData.cs" />
-    <Compile Include="Assets\assets\script\game\PlayingData.cs" />
+    <Compile Include="Assets\assets\script\io\DataCollection.cs" />
+    <Compile Include="Assets\assets\script\io\MiniJSON.cs" />
+    <Compile Include="Assets\assets\script\io\PlayingData.cs" />
     <Compile Include="Assets\assets\script\leap_motion\GameDictionary.cs" />
     <Compile Include="Assets\assets\script\leap_motion\GestureTracker.cs" />
     <Compile Include="Assets\assets\script\leap_motion\HandStateTracker.cs" />
+    <Compile Include="Assets\assets\script\server\ServerDataInfo.cs" />
+    <Compile Include="Assets\assets\script\server\ServerManager.cs" />
     <Compile Include="Assets\assets\script\ui\HUDManager.cs" />
     <Compile Include="Assets\assets\script\ui\UIManager.cs" />
     <Compile Include="Assets\assets\sensor\LeapC\Arm.cs" />
@@ -278,6 +285,11 @@
     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\VR\LeapVRCameraControl.cs" />
     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\VR\LeapVRTemporalWarping.cs" />
     <Compile Include="Assets\assets\sensor\LeapMotion\Scripts\VR\TemporalWarpingStatus.cs" />
+    <Compile Include="Assets\sumMusic\Sample\SumMusicMultiSceneTest.cs" />
+    <Compile Include="Assets\sumMusic\Sample\SumMusicSampleMenu.cs" />
+    <Compile Include="Assets\sumMusic\Scripts\SumMusic.cs" />
+    <Compile Include="Assets\sumMusic\Scripts\SumMusicButton.cs" />
+    <Compile Include="Assets\sumMusic\Scripts\SumMusicButtonImage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\OtherPackages\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
@@ -373,6 +385,7 @@
     <None Include="Assets\assets\sensor\LeapMotion\Version.txt" />
     <None Include="Assets\assets\sensor\LeapMotion\readme.txt" />
     <None Include="Assets\assets\sensor\Plugins\donotdelete.txt" />
+    <None Include="Assets\sumMusic\README.md.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
