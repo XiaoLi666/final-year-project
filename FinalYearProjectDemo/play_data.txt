@@ -108,3 +108,47 @@ PathNodeRotateRight: 0/2
 PathNodeSeaweed: 0/2
 PathNodeSpeedup: 0/2
 ####################
+####################
+5/26/2017 11:09:52 AM
+PathNodeMoveLeft: 0/2
+PathNodeMoveRight: 0/2
+PathNodeMoveUp: 0/2
+PathNodeMoveDown: 0/2
+PathNodeRotateLeft: 0/2
+PathNodeRotateRight: 0/2
+PathNodeSeaweed: 0/2
+PathNodeSpeedup: 0/2
+####################
+####################
+5/26/2017 2:11:30 PM
+PathNodeMoveLeft: 0/2
+PathNodeMoveRight: 0/2
+PathNodeMoveUp: 0/2
+PathNodeMoveDown: 0/2
+PathNodeRotateLeft: 0/2
+PathNodeRotateRight: 0/2
+PathNodeSeaweed: 0/2
+PathNodeSpeedup: 0/2
+####################
+####################
+5/26/2017 2:17:44 PM
+PathNodeMoveLeft: 1/2
+PathNodeMoveRight: 1/2
+PathNodeMoveUp: 1/2
+PathNodeMoveDown: 2/2
+PathNodeRotateLeft: 1/2
+PathNodeRotateRight: 1/2
+PathNodeSeaweed: 1/2
+PathNodeSpeedup: 1/2
+####################
+####################
+5/26/2017 2:18:42 PM
+PathNodeMoveLeft: 1/2
+PathNodeMoveRight: 1/2
+PathNodeMoveUp: 1/2
+PathNodeMoveDown: 3/2
+PathNodeRotateLeft: 1/2
+PathNodeRotateRight: 1/2
+PathNodeSeaweed: 2/2
+PathNodeSpeedup: 1/2
+####################

@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+
 using GameLogic;
+using GameEvent;
+using GameServer;
 
 namespace GameUI {
 	public class HUDManager : MonoBehaviour {
 #region attributes
+		// private
 		[SerializeField] private Text m_timerLabel;
 		[SerializeField] private Text m_countDown;
 		[SerializeField] private GameObject m_resultPanel;
@@ -16,8 +20,6 @@ namespace GameUI {
 		[SerializeField] private List<Text> m_results;
 		[SerializeField] private Text m_complete;
 		[SerializeField] private Text m_miss;
-
-		// TODO: bad coding convention: need to store in list/array
 		[SerializeField] private Image m_moveDownTutorial;
 		[SerializeField] private Image m_moveUpTutorial;
 		[SerializeField] private Image m_moveLeftTutorial;
@@ -27,18 +29,20 @@ namespace GameUI {
 		[SerializeField] private Image m_seaweedTutorial;
 		[SerializeField] private Image m_speedupTutorial;
 		[SerializeField] private Image m_currentDisplayedTutorial;
+		[SerializeField] private GameObject m_eventHandlerGame;
 
 		private GameWorld m_gameWorld;
 		private float m_timer;
+		//private EventHandlerGame m_eventHandlerGameClass;
 
-		public GameWorld GameWorld {
-			get { return m_gameWorld; }
-			set { m_gameWorld = value; }
-		}
+		// public
+		public GameWorld GameWorld { set; get; }
 #endregion
 
 #region override methods
 		private void Start() {
+			//m_eventHandlerGameClass = m_eventHandlerGame.GetComponent<EventHandlerGame>();
+
 			if (GameWorld.m_mode == GameWorld.GAME_MODE.GAME_MODE_tutorial) {
 				m_timerLabel.gameObject.SetActive(false);
 			}
@@ -98,10 +102,9 @@ namespace GameUI {
 		}
 
 		public void ResultPanelOKButtonClick(int id) {
-			DataCollection.GetInstance().SavePlayerData();
-
+			// DataCollection.GetInstance().SavePlayerData();
+			//string a = DataCollection.GetInstance().GetPlayerData();
 			DataCollection.GetInstance().SaveMapData(PlayingData.GetInstance().m_mapData);
-
 			SceneManager.LoadScene(id);
 		}
 

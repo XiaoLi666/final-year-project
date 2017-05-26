@@ -27,9 +27,20 @@ namespace GameLogic {
 			m_HUDManager.GameWorld = this;
 			m_player = m_playerGameObject.GetComponent<Player> ();
 			m_player.GameWorld = this;
+			
 			ActionBase action_raycasting = ActionFactory.CreateActionRaycasting (m_playerGameObject);
 			m_player.AddAction (action_raycasting);
-            m_waypointsTransformList = gameObject.GetComponent<PathNodeGenerator>().WaypointsTransformList;
+
+			
+			if (m_mode == GAME_MODE.GAME_MODE_tutorial) {
+				ActionBase action_play_tutorial = ActionFactory.CreateActionPlayTutorialMode(m_playerGameObject);
+				m_player.AddAction(action_play_tutorial);
+			} else if (m_mode == GAME_MODE.GAME_MODE_custom) {
+				ActionBase action_play_custom = ActionFactory.CreateActionPlayCustomMode(m_playerGameObject);
+				m_player.AddAction(action_play_custom);
+			}
+
+			m_waypointsTransformList = gameObject.GetComponent<PathNodeGenerator>().WaypointsTransformList;
 			StartCoroutine(m_HUDManager.GetReady());
         }
 

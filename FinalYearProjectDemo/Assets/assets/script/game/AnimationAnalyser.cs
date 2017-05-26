@@ -8,14 +8,12 @@ namespace GameLogic {
         private string m_previousAnimation = "idle";
 		private string m_cachedTagForTutorialPause = "";
         private Animator m_turtleAnimator;
-        private delegate void AnimationDelegate(string tag);
         private Dictionary<string, string> m_tagAnimationDict = new Dictionary<string, string>();
         #endregion
 
         #region custom methods
         public AnimationAnalyser(Animator turtle_Animator) {
             m_turtleAnimator = turtle_Animator;
-            
             m_tagAnimationDict.Add("PathNodeNormal"                     , "idle");
             m_tagAnimationDict.Add("PathNodeMoveUp"                     , "swimUp");
             m_tagAnimationDict.Add("PathNodeMoveDown"                   , "swimDown");
@@ -53,6 +51,16 @@ namespace GameLogic {
             m_previousAnimation = m_tagAnimationDict[tag];
             m_turtleAnimator.SetBool(m_previousAnimation, true);
         }
-        #endregion
-    }
+
+		public void Analysis(string tag) {
+			// No such animation
+			if (m_tagAnimationDict.ContainsKey(tag) == false)
+				return;
+
+			m_turtleAnimator.SetBool(m_previousAnimation, false);
+			m_previousAnimation = m_tagAnimationDict[tag];
+			m_turtleAnimator.SetBool(m_previousAnimation, true);
+		}
+		#endregion
+	}
 }

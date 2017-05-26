@@ -10,6 +10,15 @@ namespace GameLogic {
 		static public ActionBase CreateActionRotate(GameObject owner, float angle, ActionRotate.ROTATE_DIRECTION direction) {
 			return new ActionRotate (owner, angle, direction);
 		}
+		static public ActionBase CreateActionEatSeaweed(GameObject owner, GameObject seaweed) {
+			return new ActionEatSeaweed(owner, seaweed);
+		}
+		static public ActionBase CreateActionPlayTutorialMode(GameObject owner) {
+			return new ActionPlayTutorialMode(owner);
+		}
+		static public ActionBase CreateActionPlayCustomMode(GameObject owner) {
+			return new ActionPlayCustomMode(owner);
+		}
 		#endregion
 	}
 }

@@ -4,20 +4,20 @@ using UnityEngine;
 namespace GameLogic {
     public class GestureAnalyser {
 		#region attributes
-        private GestureTracker m_gestureTracker = null;
+		// private
+		private GestureTracker m_gestureTracker = null;
         private Dictionary<string, CharacterAction> m_tagActionDict = new Dictionary<string, CharacterAction>();
 		private string m_tag = "PathNodeStart";
-		private bool m_isChecked = false;
-		private bool m_complete = false;
 		private bool m_firstGesture = true;
+		private bool m_isChecked = false; // bool variable for all the components
+		private bool m_isCompleted = false; // bool variable for only the components above which player needs to do gestures
 		private bool m_justEnter = false;
 
-		private Transform seaweed_to_delete = null;
-
-		// Simple and fast way to do tutorial checking, need to polish in the future
-		public AnimationAnalyser m_animationAnalyser = null;
-		public Player m_playerComponent = null;
+		// public
+		public Player m_playerClass = null;
 		public GameWorld m_gameWorld = null;
+		public bool IsCompleted { get { return m_isCompleted; } }
+		public bool IsChecked { get { return m_isChecked;} }
 		#endregion
 
 		#region custom methods
@@ -32,73 +32,43 @@ namespace GameLogic {
 			m_tagActionDict.Add("PathNodeSeaweed"       , CharacterAction.Eat);
             m_tagActionDict.Add("PathNodeSpeedup"       , CharacterAction.SwimForward);
         }
-
-        public void InitGestureCheck(RaycastHit hit, ref bool tutorial_pause) {
+		
+		public void InitGestureCheck() {
+			// Ignore check the previous gesture completion when just to do the first gesture
 			if (!m_firstGesture) {
-				if (m_justEnter && !m_complete) {
+				if (m_justEnter && !m_isCompleted) {
 					m_gameWorld.ShowHUDMiss();
-					// PlayingData.GetInstance().UpdateMissCount(1);
+					PlayingData.GetInstance().AddGestureDataBy(m_playerClass.PrevRaycastingTag, false);
 				}
 				m_justEnter = false;
-				m_complete = false;
+				m_isCompleted = false;
 			}
-
-			if (m_tagActionDict.ContainsKey(hit.collider.tag)) {
-				m_tag = hit.collider.tag;
+			
+			// First and foremost, the tag should be available for checking
+			if (m_tagActionDict.ContainsKey(m_playerClass.RaycastingTag)) {
+				m_tag = m_playerClass.RaycastingTag;
 				m_isChecked = false;
+				m_firstGesture = false;
 				m_justEnter = true;
-
-				if (GameWorld.m_mode == GameWorld.GAME_MODE.GAME_MODE_tutorial) {
-					iTween.Pause();
-					m_playerComponent.PauseAction = true;
-					tutorial_pause = true;
-					m_gameWorld.DisplayTutorial(m_tag);
-				}
-
-				if (m_tag == "PathNodeSeaweed") {
-					seaweed_to_delete = hit.transform.Find("Seaweed");
-				}
-
-				if (m_firstGesture) {
-					m_firstGesture = false;
-				}
-			}
-			else { // if hit by the gesture check terminator, stop checking the gesture
+			} else { // if the component tag does not exist, ingore this check
+				Debug.Log("The component tag does not exist");
 				m_isChecked = true;
 			}
 		}
 
-        // Calling per tick
-        public void Analysis(ref bool tutorial_pause) {
-            if (m_isChecked == true) {
-                return;
-            }
-
-            CharacterAction char_action = GameDictionary.PairedAction[m_gestureTracker.GetIdentifiedGesture()];
-            if (m_tagActionDict.ContainsKey(m_tag) && char_action == m_tagActionDict[m_tag]) {
-				m_isChecked = true;
-
-				m_complete = true;
-				m_gameWorld.ShowHUDComplete();
-
-				if (GameWorld.m_mode == GameWorld.GAME_MODE.GAME_MODE_tutorial) {
-					tutorial_pause = false;
-					iTween.Resume();
-					// Resume the animation analyzer by call its analyzer function once
-					m_animationAnalyser.Analysis("", tutorial_pause);
-					m_playerComponent.PauseAction = false;
-					m_gameWorld.UndisplayTutorial();
-				} else {
-					PlayingData.GetInstance().InsertGestureCompletionDataBy(m_tag, 1);
-					Debug.Log(char_action.ToString());
-				}
-
-				if (seaweed_to_delete != null) {
-					Object.Destroy(seaweed_to_delete.gameObject);
-					seaweed_to_delete = null;
-				}
+		public void Analysis() {
+			if (m_isChecked == true) {
+				return;
 			}
-        }
-	#endregion
-    }
+
+			CharacterAction char_action = GameDictionary.PairedAction[m_gestureTracker.GetIdentifiedGesture()];
+			if (m_tagActionDict.ContainsKey(m_playerClass.RaycastingTag) && char_action == m_tagActionDict[m_playerClass.RaycastingTag]) {
+				m_isChecked = true;
+				m_isCompleted = true;
+				m_gameWorld.ShowHUDComplete();
+				PlayingData.GetInstance().AddGestureDataBy(m_playerClass.RaycastingTag, true);
+			}
+		}
+		#endregion
+	}
 }

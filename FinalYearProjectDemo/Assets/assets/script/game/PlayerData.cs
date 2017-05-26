@@ -1,16 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEngine;
 using System;
-using UnityEngine;
+using System.Collections.Generic;
 
 namespace GameLogic {
     // [Serializable]
     public class PlayerData {
 		#region attributes
+		// private
 		private Dictionary<string, int> m_gesturesCompletionData = new Dictionary<string, int>();
-		public Dictionary<string, int> GestureCompletionData {
-			get { return m_gesturesCompletionData; }
+		private List<GestureData> m_gestureData = new List<GestureData>();
+
+		// public
+		public class GestureData {
+			public string m_name;
+			public string m_time;
+			public bool m_completed;
 		}
+		public Dictionary<string, int> GestureCompletionData { get { return m_gesturesCompletionData; } }
+		public List<GestureData> GestureDataList { get { return m_gestureData; } }
 		#endregion
 
 		#region custom methods
@@ -23,6 +30,17 @@ namespace GameLogic {
 			m_gesturesCompletionData.Add("PathNodeRotateRight"	, 0);
 			m_gesturesCompletionData.Add("PathNodeSeaweed"		, 0);
 			m_gesturesCompletionData.Add("PathNodeSpeedup"		, 0);
+		}
+
+		public void AddGestureDataBy(string name, bool is_completed) {
+			GestureData g_data = new GestureData();
+			g_data.m_name = name;
+			g_data.m_time = DateTime.Now.ToString();
+			g_data.m_completed = is_completed;
+			m_gestureData.Add(g_data);
+			if (is_completed) {
+				m_gesturesCompletionData[name] += 1;
+			}
 		}
 		#endregion
 	}

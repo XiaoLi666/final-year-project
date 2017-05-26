@@ -3,7 +3,7 @@
 namespace GameLogic {
 	abstract public class ActionBase {
 		#region attributes
-		protected enum ACTION_TYPE {
+		public enum ACTION_TYPE {
 			ACTION_none,
 			ACTION_raycasting,
 			ACTION_eatSeaweed,
@@ -13,6 +13,12 @@ namespace GameLogic {
 		};
 		protected GameObject m_owner;
 		protected ACTION_TYPE m_actionType;
+
+		public ACTION_TYPE ActionType {
+			get {
+				return m_actionType;
+			}
+		}
 		#endregion
 
 		#region methods

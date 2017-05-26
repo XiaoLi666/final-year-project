@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.5.1f1</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -176,15 +174,16 @@
     <Compile Include="Assets\assets\material\Water\Water4\Sources\Scripts\SpecularLighting.cs" />
     <Compile Include="Assets\assets\material\Water\Water4\Sources\Scripts\WaterBase.cs" />
     <Compile Include="Assets\assets\material\Water\Water4\Sources\Scripts\WaterTile.cs" />
-    <Compile Include="Assets\assets\script\event\EventHandlerGame.cs" />
-    <Compile Include="Assets\assets\script\event\EventHandlerUI.cs" />
     <Compile Include="Assets\assets\script\action\ActionBase.cs" />
     <Compile Include="Assets\assets\script\action\ActionEatSeaweed.cs" />
     <Compile Include="Assets\assets\script\action\ActionFactory.cs" />
     <Compile Include="Assets\assets\script\action\ActionPlayCustomMode.cs" />
+    <Compile Include="Assets\assets\script\action\ActionPlayModeBase.cs" />
     <Compile Include="Assets\assets\script\action\ActionPlayTutorialMode.cs" />
     <Compile Include="Assets\assets\script\action\ActionRaycasting.cs" />
     <Compile Include="Assets\assets\script\action\ActionRotate.cs" />
+    <Compile Include="Assets\assets\script\event\EventHandlerGame.cs" />
+    <Compile Include="Assets\assets\script\event\EventHandlerUI.cs" />
     <Compile Include="Assets\assets\script\game\AnimatedProjector.cs" />
     <Compile Include="Assets\assets\script\game\AnimationAnalyser.cs" />
     <Compile Include="Assets\assets\script\game\DrawWayPoint.cs" />

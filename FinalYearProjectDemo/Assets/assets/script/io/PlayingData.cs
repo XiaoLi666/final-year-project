@@ -21,6 +21,8 @@ namespace GameLogic {
 
 		// Temp attribute, bad coding, need to remove it later !!!!
 		private Dictionary<string, int> m_typeIndexMapData;
+
+		public PlayerData PlayerData { get { return m_playerData; } }
 		#endregion
 
 		#region custom methods
@@ -46,6 +48,10 @@ namespace GameLogic {
 
 		public void InsertGestureCompletionDataBy(string m_tag, int value) {
 			m_playerData.GestureCompletionData[m_tag] += value;
+		}
+
+		public void AddGestureDataBy(string name, bool is_completed) {
+			m_playerData.AddGestureDataBy(name, is_completed);
 		}
 
 		// It is involved in Gesture Analyser, going to update it
