@@ -1,8 +1,6 @@
 ﻿using UnityEditor;
 using UnityEngine;
 using UnityEditorInternal;
-using System.Collections;
-using GameLogic;
 
 [CustomEditor(typeof(GameMap))]
 public class GameMapEditor : Editor {

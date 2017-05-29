@@ -4,6 +4,7 @@ using GameUI;
 namespace GameLogic {
 	public class GameWorld : MonoBehaviour {
 		#region attributes
+		// private
 		[SerializeField] private GameObject m_playerGameObject;
 		[SerializeField] private GameObject m_HUDManagerGameObject;
         private bool m_start = false;
@@ -12,9 +13,13 @@ namespace GameLogic {
 		private Player m_player;
 		private HUDManager m_HUDManager;
 		private Transform[] m_waypointsTransformList;
+
+		// public
 		static public GAME_MODE m_mode;
 		static public float m_speed;
-		public float Timer { get { return m_timer; } }
+		public float Timer {
+			get { return m_timer; }
+		}
 		public enum GAME_MODE {
 			GAME_MODE_tutorial,
 			GAME_MODE_custom
@@ -25,13 +30,13 @@ namespace GameLogic {
 		void Start () {
 			m_HUDManager = m_HUDManagerGameObject.GetComponent<HUDManager>();
 			m_HUDManager.GameWorld = this;
+
 			m_player = m_playerGameObject.GetComponent<Player> ();
 			m_player.GameWorld = this;
 			
 			ActionBase action_raycasting = ActionFactory.CreateActionRaycasting (m_playerGameObject);
 			m_player.AddAction (action_raycasting);
 
-			
 			if (m_mode == GAME_MODE.GAME_MODE_tutorial) {
 				ActionBase action_play_tutorial = ActionFactory.CreateActionPlayTutorialMode(m_playerGameObject);
 				m_player.AddAction(action_play_tutorial);

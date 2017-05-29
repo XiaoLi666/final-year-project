@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace GameLogic {
     public class AnimationAnalyser {
         #region attributes
         private string m_previousAnimation = "idle";
-		private string m_cachedTagForTutorialPause = "";
         private Animator m_turtleAnimator;
         private Dictionary<string, string> m_tagAnimationDict = new Dictionary<string, string>();
         #endregion
@@ -33,23 +31,6 @@ namespace GameLogic {
             m_tagAnimationDict.Add("PathNodeSpeedupAnimationChecker"    , "idle");
             m_tagAnimationDict.Add("PathNodeStart"                      , "idle");
             m_tagAnimationDict.Add("PathNodeEnd"                        , "idle");
-        }
-
-        public void Analysis(string tag, bool tutorial_pause) {
-			if (tutorial_pause) {
-				m_cachedTagForTutorialPause = tag;
-				return;
-			} else if (m_cachedTagForTutorialPause != "") {
-				tag = m_cachedTagForTutorialPause;
-				m_cachedTagForTutorialPause = "";
-			}
-
-            if (m_tagAnimationDict.ContainsKey(tag) == false)
-                return;
-
-            m_turtleAnimator.SetBool(m_previousAnimation, false);
-            m_previousAnimation = m_tagAnimationDict[tag];
-            m_turtleAnimator.SetBool(m_previousAnimation, true);
         }
 
 		public void Analysis(string tag) {

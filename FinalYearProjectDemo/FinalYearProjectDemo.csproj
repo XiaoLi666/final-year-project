@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.5.1f1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -190,14 +192,14 @@
     <Compile Include="Assets\assets\script\game\GameMap.cs" />
     <Compile Include="Assets\assets\script\game\GameWorld.cs" />
     <Compile Include="Assets\assets\script\game\GestureAnalyser.cs" />
-    <Compile Include="Assets\assets\script\game\MapData.cs" />
+    <Compile Include="Assets\assets\script\data\MapData.cs" />
     <Compile Include="Assets\assets\script\game\PathNode.cs" />
     <Compile Include="Assets\assets\script\game\PathNodeGenerator.cs" />
     <Compile Include="Assets\assets\script\game\Player.cs" />
-    <Compile Include="Assets\assets\script\game\PlayerData.cs" />
-    <Compile Include="Assets\assets\script\io\DataCollection.cs" />
-    <Compile Include="Assets\assets\script\io\MiniJSON.cs" />
-    <Compile Include="Assets\assets\script\io\PlayingData.cs" />
+    <Compile Include="Assets\assets\script\data\PlayerData.cs" />
+    <Compile Include="Assets\assets\script\data\DataCollection.cs" />
+    <Compile Include="Assets\assets\script\data\MiniJSON.cs" />
+    <Compile Include="Assets\assets\script\data\PlayingData.cs" />
     <Compile Include="Assets\assets\script\leap_motion\GameDictionary.cs" />
     <Compile Include="Assets\assets\script\leap_motion\GestureTracker.cs" />
     <Compile Include="Assets\assets\script\leap_motion\HandStateTracker.cs" />

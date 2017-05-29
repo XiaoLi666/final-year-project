@@ -7,21 +7,10 @@ namespace GameLogic {
         #region attributes
         private static PlayingData m_instance = new PlayingData();
 		private PlayerData m_playerData;
-		public MapData m_mapData;
-
-		// TODO: for testing only
-		public int m_missCount;
-
-		// TODO: move it to ServerManager, going to remove this
-		private bool m_loggedIn = false;
-		public bool LoggedIn {
-			set { m_loggedIn = value; }
-			get { return m_loggedIn; }
-		}
-
 		// Temp attribute, bad coding, need to remove it later !!!!
 		private Dictionary<string, int> m_typeIndexMapData;
 
+		public MapData m_mapData;
 		public PlayerData PlayerData { get { return m_playerData; } }
 		#endregion
 
@@ -54,19 +43,12 @@ namespace GameLogic {
 			m_playerData.AddGestureDataBy(name, is_completed);
 		}
 
-		// It is involved in Gesture Analyser, going to update it
-		public void UpdateMissCount(int value) {
-			m_missCount++;
-			if (m_missCount > 6) {
-				m_mapData.Speed = 0.5f;
-			}
-		}
-
 		// TODO: need to find a method to make the type and id consistent
 		public string GetResultBy(string type) {
 			return m_playerData.GestureCompletionData[type].ToString() + "/" + m_mapData.MapConfigList[m_typeIndexMapData[type]];
 		}
 
+		// Based on the old design
 		public override string ToString() {
 			StringBuilder builder = new StringBuilder();
 			builder.Append("####################");

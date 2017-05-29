@@ -3,6 +3,11 @@
 namespace GameLogic {
 	abstract public class ActionBase {
 		#region attributes
+		// protected
+		protected GameObject m_owner;
+		protected ACTION_TYPE m_actionType;
+
+		// public
 		public enum ACTION_TYPE {
 			ACTION_none,
 			ACTION_raycasting,
@@ -11,13 +16,8 @@ namespace GameLogic {
 			ACTION_playTutorialMode,
 			ACTION_playCustomMode
 		};
-		protected GameObject m_owner;
-		protected ACTION_TYPE m_actionType;
-
 		public ACTION_TYPE ActionType {
-			get {
-				return m_actionType;
-			}
+			get { return m_actionType; }
 		}
 		#endregion
 

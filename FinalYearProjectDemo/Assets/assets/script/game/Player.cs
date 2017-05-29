@@ -4,30 +4,31 @@ using System.Collections.Generic;
 namespace GameLogic {
 	public class Player : MonoBehaviour {
 		#region attributes
+		// private
 		[SerializeField][Range(0.0f,5.0f)] private float m_moveSpeed;
 		[SerializeField] private GestureTracker m_gestureTracker;
-
 		private Animator m_turtleAnimator;
 		private AnimationAnalyser m_animationAnalyser = null;
 		private GestureAnalyser m_gestureAnalyser = null;
 		private List<ActionBase> m_actions = new List<ActionBase>();
 		private GameWorld m_gameWorld;
-
+		private GameObject m_seaweedToEat = null;
 		private bool m_pauseAction;
 		private bool m_allowAnalyzeGesture;
 		private bool m_allowAnalyzeAnimation;
 		private string m_raycastingTag;
 		private string m_prevRaycastingTag;
-		private GameObject m_seaweedToEat = null;
 
-		public GameObject SeaweedToEat { set; get; }
+		// public
+		public GameObject SeaweedToEat { set { m_seaweedToEat = value; } get { return m_seaweedToEat; } }
 		public GestureAnalyser GestureAnalyser { get { return m_gestureAnalyser; } }
 		public AnimationAnalyser AnimationAnalyser { get { return m_animationAnalyser; } }
+		public GameWorld GameWorld { set { m_gameWorld = value; } get { return m_gameWorld; } }
 		public float MoveSpeed { get { return m_moveSpeed; } }
 		public bool PauseAction { set { m_pauseAction = value; } }
-		public GameWorld GameWorld { set; get; }
-		public bool AllowAnalyzeGesture { set; get; }
-		public bool AllowAnalyzeAnimation { set; get; }
+		public bool AllowAnalyzeGesture { set { m_allowAnalyzeGesture = value; } get { return m_allowAnalyzeGesture; } }
+		public bool AllowAnalyzeAnimation { set { m_allowAnalyzeAnimation = value; } get { return m_allowAnalyzeAnimation; } }
+
 		public string RaycastingTag {
 			set {
 				PrevRaycastingTag = m_raycastingTag;
@@ -35,17 +36,11 @@ namespace GameLogic {
 				AllowAnalyzeGesture = true;
 				AllowAnalyzeAnimation = true;
 			}
-			get {
-				return m_raycastingTag;
-			}
+			get { return m_raycastingTag; }
 		}
 		public string PrevRaycastingTag {
-			set {
-				m_prevRaycastingTag = value;
-			}
-			get {
-				return m_prevRaycastingTag;
-			}
+			set { m_prevRaycastingTag = value; }
+			get { return m_prevRaycastingTag; }
 		}
 
 		// this is a low performance method (the actual performance may not be low)

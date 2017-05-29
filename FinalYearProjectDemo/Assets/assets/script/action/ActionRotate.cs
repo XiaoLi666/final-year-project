@@ -17,7 +17,7 @@ namespace GameLogic {
 
 		#region override methods
 		public ActionRotate(GameObject owner, float angle, ROTATE_DIRECTION direction) : base (owner) {
-			m_actionType = ActionBase.ACTION_TYPE.ACTION_rotate;
+			m_actionType = ACTION_TYPE.ACTION_rotate;
 			m_angle = angle;
 			m_direction = direction;
 			if (m_direction == ROTATE_DIRECTION.ROTATE_left)

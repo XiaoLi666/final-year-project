@@ -24,21 +24,12 @@ namespace GameLogic {
 		#region custom methods shared by different play mode
 		protected void CollideBy(string tag) {
 			switch (tag) {
-				case "PathNodeRotateLeft":
-					HandleCollisionRotateLeft();
-					break;
-				case "PathNodeRotateRight":
-					HandleCollisionRotateRight();
-					break;
-				case "PathNodeEnd":
-					HandleCollisionEnd();
-					break;
-				case "PathNodeSeaweed":
-					HandleEatSeaweed();
-					break;
+				case "PathNodeRotateLeft": HandleCollisionRotateLeft(); break;
+				case "PathNodeRotateRight": HandleCollisionRotateRight(); break;
+				case "PathNodeEnd": HandleCollisionEnd(); break;
+				case "PathNodeSeaweed": HandleEatSeaweed(); break;
 			}
 		}
-
 		private void HandleCollisionRotateLeft() {
 			m_playerClass.AddAction(ActionFactory.CreateActionRotate(m_owner, 90.0f, ActionRotate.ROTATE_DIRECTION.ROTATE_left));
 

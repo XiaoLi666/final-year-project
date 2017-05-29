@@ -25,6 +25,7 @@ namespace GameEvent {
 				m_uiManagerClass.LoginViewOkBtnClickCallback();
 			} else if (result == "error") {
 				// user name wrong? password ?
+				Debug.Log("The user name or password is incorrect!");
 			}
 		}
 		#endregion

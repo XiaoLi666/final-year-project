@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 using GameLogic;
 using GameEvent;
-using GameServer;
 
 namespace GameUI {
 	public class HUDManager : MonoBehaviour {
@@ -17,9 +17,10 @@ namespace GameUI {
 		[SerializeField] private GameObject m_resultPanel;
 		[SerializeField] private GameObject m_pausePanel;
 		[SerializeField] private GameObject m_tutorialModeCompletionPanel;
-		[SerializeField] private List<Text> m_results;
+		[SerializeField] private GameObject m_eventHandlerGame;
 		[SerializeField] private Text m_complete;
 		[SerializeField] private Text m_miss;
+		[SerializeField] private List<Text> m_results;
 		[SerializeField] private Image m_moveDownTutorial;
 		[SerializeField] private Image m_moveUpTutorial;
 		[SerializeField] private Image m_moveLeftTutorial;
@@ -29,30 +30,30 @@ namespace GameUI {
 		[SerializeField] private Image m_seaweedTutorial;
 		[SerializeField] private Image m_speedupTutorial;
 		[SerializeField] private Image m_currentDisplayedTutorial;
-		[SerializeField] private GameObject m_eventHandlerGame;
 
-		private GameWorld m_gameWorld;
+		private GameWorld m_gameWorldClass;
+		private EventHandlerGame m_eventHandlerGameClass;
 		private float m_timer;
-		//private EventHandlerGame m_eventHandlerGameClass;
 
 		// public
-		public GameWorld GameWorld { set; get; }
+		public GameWorld GameWorld {
+			set { m_gameWorldClass = value; }
+			get { return m_gameWorldClass; }
+		}
 #endregion
 
 #region override methods
 		private void Start() {
-			//m_eventHandlerGameClass = m_eventHandlerGame.GetComponent<EventHandlerGame>();
-
+			m_eventHandlerGameClass = m_eventHandlerGame.GetComponent<EventHandlerGame>();
 			if (GameWorld.m_mode == GameWorld.GAME_MODE.GAME_MODE_tutorial) {
 				m_timerLabel.gameObject.SetActive(false);
 			}
 		}
 
 		private void Update() {
-			// TODO: not implement this for the demo 3/1/2017
 			if (Input.GetKeyDown(KeyCode.Escape)) {
 				m_pausePanel.SetActive(true);
-				m_gameWorld.PauseGame();
+				m_gameWorldClass.PauseGame();
 			}
 		}
 #endregion
@@ -68,7 +69,7 @@ namespace GameUI {
 			m_countDown.text = "GO!";
 			yield return new WaitForSeconds(1.0f);
 			m_countDown.text = "";
-			m_gameWorld.Go();
+			m_gameWorldClass.Go();
 		}
 
 		public void UpdateTimer(float timer) {
@@ -102,19 +103,20 @@ namespace GameUI {
 		}
 
 		public void ResultPanelOKButtonClick(int id) {
+			string a = DataCollection.GetInstance().GetPlayerData();
+			m_eventHandlerGameClass.EventUploadData(a);
 			// DataCollection.GetInstance().SavePlayerData();
-			//string a = DataCollection.GetInstance().GetPlayerData();
 			DataCollection.GetInstance().SaveMapData(PlayingData.GetInstance().m_mapData);
 			SceneManager.LoadScene(id);
 		}
 
 		public void PausePanelResumeButtonClick() {
 			m_pausePanel.SetActive(false);
-			m_gameWorld.ResumeGame();
+			m_gameWorldClass.ResumeGame();
 		}
 
 		public void PausePanelQuitButtonClick(int id) {
-			m_gameWorld.ResumeGame();
+			m_gameWorldClass.ResumeGame();
 			SceneManager.LoadScene(id);
 		}
 

@@ -52,9 +52,12 @@ namespace GameLogic {
 			File.AppendAllText(m_playerDataPath, PlayingData.GetInstance().ToString());
 		}
 
-		//public string GetPlayerData() {
-		//	return JsonUtility.ToJson(PlayingData.GetInstance().PlayerData.GestureDataList).ToString();
-		//}
+		public string GetPlayerData() {
+			// data for each gesture (including successful and failed)
+			string player_data = "";
+			player_data += PlayingData.GetInstance().PlayerData.GetJsonString();
+			return player_data;
+		}
         #endregion
     }
 }

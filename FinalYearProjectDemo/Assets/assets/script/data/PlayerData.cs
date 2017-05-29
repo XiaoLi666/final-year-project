@@ -11,7 +11,7 @@ namespace GameLogic {
 		private List<GestureData> m_gestureData = new List<GestureData>();
 
 		// public
-		public class GestureData {
+		public class GestureData : MonoBehaviour {
 			public string m_name;
 			public string m_time;
 			public bool m_completed;
@@ -41,6 +41,15 @@ namespace GameLogic {
 			if (is_completed) {
 				m_gesturesCompletionData[name] += 1;
 			}
+		}
+
+		public string GetJsonString() {
+			string data_string = "";
+			foreach (GestureData g_data in m_gestureData) {
+				data_string += JsonUtility.ToJson(g_data).ToString();
+				data_string += ",\n";
+			}
+			return data_string;
 		}
 		#endregion
 	}

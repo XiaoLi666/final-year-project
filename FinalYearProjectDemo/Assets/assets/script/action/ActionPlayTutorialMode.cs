@@ -13,7 +13,7 @@ namespace GameLogic {
 		}
 
 		public override bool Update(bool pause = false) {
-			// For gesture once per component
+			// Check gesture once per component
 			if (m_playerClass.AllowAnalyzeGesture) {
 				Pause();
 				m_gestureAnalyser.InitGestureCheck();
@@ -28,7 +28,7 @@ namespace GameLogic {
 				PostGestureLogic();
 			}
 
-			// For animation once per component
+			// Check animation once per component
 			if (m_playerClass.AllowAnalyzeAnimation) {
 				if (m_tutorialPause /*set in the Pause()*/) {
 					m_cachedTagForAnimationAnalysis = m_playerClass.RaycastingTag;

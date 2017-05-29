@@ -68,7 +68,13 @@ namespace GameServer {
 			WWW www = new WWW(ServerDataInfo.URL, form);
 			yield return www;
 
-			Debug.Log(www.text);
+			if (www.error == null) {
+				Debug.Log(www.text);
+			} else {
+				Debug.Log("Upload Error!");
+			}
+
+			
 		}
 		#endregion
 	}
