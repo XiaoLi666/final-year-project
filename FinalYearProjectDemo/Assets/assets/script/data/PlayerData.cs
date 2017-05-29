@@ -18,6 +18,7 @@ namespace GameLogic {
 		}
 		public Dictionary<string, int> GestureCompletionData { get { return m_gesturesCompletionData; } }
 		public List<GestureData> GestureDataList { get { return m_gestureData; } }
+		
 		#endregion
 
 		#region custom methods

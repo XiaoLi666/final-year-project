@@ -56,6 +56,21 @@ namespace GameLogic {
 			// data for each gesture (including successful and failed)
 			string player_data = "";
 			player_data += PlayingData.GetInstance().PlayerData.GetJsonString();
+			player_data += PlayingData.GetInstance().GetResultJsonString();
+
+			GameObject _leapServiceProvider = GameObject.Find("LeapMotionServiceProvider");
+
+			_leapServiceProvider.GetComponent<HandStateTracker>().dataList.Add("]\n");
+			_leapServiceProvider.GetComponent<GestureTracker>().dataList.Add("]");
+			for (int i = 0; i < _leapServiceProvider.GetComponent<HandStateTracker>().dataList.Count; i++) {
+				player_data += _leapServiceProvider.GetComponent<HandStateTracker>().dataList[i];
+			}
+			player_data += ",";
+			for (int i = 0; i < _leapServiceProvider.GetComponent<GestureTracker>().dataList.Count; i++) {
+				player_data += _leapServiceProvider.GetComponent<GestureTracker>().dataList[i];
+			}
+			player_data += "}";
+
 			return player_data;
 		}
         #endregion

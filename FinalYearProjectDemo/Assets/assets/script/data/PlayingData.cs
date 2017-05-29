@@ -2,16 +2,28 @@
 using System.Text;
 using System.Collections.Generic;
 
+using UnityEngine;
+
 namespace GameLogic {
     public class PlayingData {
         #region attributes
+		// private
         private static PlayingData m_instance = new PlayingData();
 		private PlayerData m_playerData;
 		// Temp attribute, bad coding, need to remove it later !!!!
 		private Dictionary<string, int> m_typeIndexMapData;
 
+		// public
 		public MapData m_mapData;
 		public PlayerData PlayerData { get { return m_playerData; } }
+
+		private List<GestureCompletenessData> m_gestureCompletenessData = new List<GestureCompletenessData>();
+		public class GestureCompletenessData : MonoBehaviour {
+			public string m_name;
+			public float m_rate;
+		}
+		public List<GestureCompletenessData> GestureCompletenessDataList { get { return m_gestureCompletenessData; } }
+
 		#endregion
 
 		#region custom methods
@@ -34,18 +46,73 @@ namespace GameLogic {
         public static PlayingData GetInstance() {
             return m_instance;
         }
-
 		public void InsertGestureCompletionDataBy(string m_tag, int value) {
 			m_playerData.GestureCompletionData[m_tag] += value;
 		}
-
 		public void AddGestureDataBy(string name, bool is_completed) {
 			m_playerData.AddGestureDataBy(name, is_completed);
 		}
-
-		// TODO: need to find a method to make the type and id consistent
 		public string GetResultBy(string type) {
 			return m_playerData.GestureCompletionData[type].ToString() + "/" + m_mapData.MapConfigList[m_typeIndexMapData[type]];
+		}
+		public string GetResultJsonString() {
+			string json_string = "";
+			m_gestureCompletenessData.Clear();
+
+			GestureCompletenessData gcd = new GestureCompletenessData();
+			string type = "PathNodeMoveLeft";
+			gcd.m_name = type;
+			gcd.m_rate = m_playerData.GestureCompletionData[type] / m_mapData.MapConfigList[m_typeIndexMapData[type]];
+			GestureCompletenessDataList.Add(gcd);
+
+			gcd = new GestureCompletenessData();
+			type = "PathNodeMoveRight";
+			gcd.m_name = type;
+			gcd.m_rate = m_playerData.GestureCompletionData[type] / m_mapData.MapConfigList[m_typeIndexMapData[type]];
+			GestureCompletenessDataList.Add(gcd);
+
+			gcd = new GestureCompletenessData();
+			type = "PathNodeMoveUp";
+			gcd.m_name = type;
+			gcd.m_rate = m_playerData.GestureCompletionData[type] / m_mapData.MapConfigList[m_typeIndexMapData[type]];
+			GestureCompletenessDataList.Add(gcd);
+
+			gcd = new GestureCompletenessData();
+			type = "PathNodeMoveDown";
+			gcd.m_name = type;
+			gcd.m_rate = m_playerData.GestureCompletionData[type] / m_mapData.MapConfigList[m_typeIndexMapData[type]];
+			GestureCompletenessDataList.Add(gcd);
+
+			gcd = new GestureCompletenessData();
+			type = "PathNodeRotateLeft";
+			gcd.m_name = type;
+			gcd.m_rate = m_playerData.GestureCompletionData[type] / m_mapData.MapConfigList[m_typeIndexMapData[type]];
+			GestureCompletenessDataList.Add(gcd);
+
+			gcd = new GestureCompletenessData();
+			type = "PathNodeRotateRight";
+			gcd.m_name = type;
+			gcd.m_rate = m_playerData.GestureCompletionData[type] / m_mapData.MapConfigList[m_typeIndexMapData[type]];
+			GestureCompletenessDataList.Add(gcd);
+
+			gcd = new GestureCompletenessData();
+			type = "PathNodeSeaweed";
+			gcd.m_name = type;
+			gcd.m_rate = m_playerData.GestureCompletionData[type] / m_mapData.MapConfigList[m_typeIndexMapData[type]];
+			GestureCompletenessDataList.Add(gcd);
+
+			gcd = new GestureCompletenessData();
+			type = "PathNodeSpeedup";
+			gcd.m_name = type;
+			gcd.m_rate = m_playerData.GestureCompletionData[type] / m_mapData.MapConfigList[m_typeIndexMapData[type]];
+			GestureCompletenessDataList.Add(gcd);
+
+			foreach (GestureCompletenessData data in m_gestureCompletenessData) {
+				json_string += JsonUtility.ToJson(data).ToString();
+				json_string += ",\n";
+			}
+
+			return json_string;
 		}
 
 		// Based on the old design
