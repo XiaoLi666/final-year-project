@@ -16,7 +16,7 @@ namespace GameLogic {
 
 		// public
 		static public GAME_MODE m_mode;
-		static public float m_speed;
+		static public float m_speed = 1.0f;
 		public float Timer {
 			get { return m_timer; }
 		}
